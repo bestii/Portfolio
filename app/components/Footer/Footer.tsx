@@ -1,4 +1,4 @@
-import { BackToTop, SocialLinks } from '@/app/components';
+import { GoToTop, SocialLinks } from '@/app/components';
 import { FC } from 'react';
 
 import './Footer.scss';
@@ -9,7 +9,7 @@ const Footer: FC = () => {
   return (
     <footer className='copyright-footer py-2 text-center text-sm sm:text-base'>
       <SocialLinks />
-      <BackToTop />
+      <GoToTop />
       <p className='my-3'>
         {`Bestin John © Copyright ${copyrightYear}. All Rights Reserved.`}
       </p>

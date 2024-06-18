@@ -8,6 +8,7 @@ $prefix: site-social-links-footer;
     }
     .social-icon {
       color: var(--color);
+      @apply text-xl;
     }
   }
   .social-links-line {

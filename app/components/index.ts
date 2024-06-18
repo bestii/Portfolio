@@ -1,5 +1,5 @@
-import BackToTop from './BackToTop/BackToTop';
 import Footer from './Footer/Footer';
+import GoToTop from './GoToTop/GoToTop';
 import SocialLinks from './SocialLinks/SocialLinks';
 
-export { BackToTop, Footer, SocialLinks };
+export { Footer, GoToTop, SocialLinks };

@@ -2,6 +2,8 @@ import { Footer } from '@/app/components';
 import type { Metadata } from 'next';
 import { Barlow } from 'next/font/google';
 import { FC, PropsWithChildren } from 'react';
+
+import '@fortawesome/fontawesome-svg-core/styles.css';
 import './themes/globals.scss';
 
 const barlow = Barlow({

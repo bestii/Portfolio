@@ -28,12 +28,7 @@ const SocialLinks: FC = () => {
         target='_blank'
         rel='noopener noreferrer'
       >
-        <FontAwesomeIcon
-          icon={facebookIcon}
-          height={20}
-          width={20}
-          className='social-icon'
-        />
+        <FontAwesomeIcon icon={facebookIcon} className='social-icon' />
       </a>
       <a
         className='social-link mb-1 flex h-11 w-11 items-center justify-center rounded-full leading-10'
@@ -42,12 +37,7 @@ const SocialLinks: FC = () => {
         target='_blank'
         rel='noopener noreferrer'
       >
-        <FontAwesomeIcon
-          icon={githubIcon}
-          height={20}
-          width={20}
-          className='social-icon'
-        />
+        <FontAwesomeIcon icon={githubIcon} className='social-icon' />
       </a>
       <a
         className='social-link mb-1 flex h-11 w-11 items-center justify-center rounded-full leading-10'
@@ -56,12 +46,7 @@ const SocialLinks: FC = () => {
         target='_blank'
         rel='noopener noreferrer'
       >
-        <FontAwesomeIcon
-          icon={instagramIcon}
-          height={20}
-          width={20}
-          className='social-icon'
-        />
+        <FontAwesomeIcon icon={instagramIcon} className='social-icon' />
       </a>
       <a
         className='social-link mb-1 flex h-11 w-11 items-center justify-center rounded-full leading-10'
@@ -84,12 +69,7 @@ const SocialLinks: FC = () => {
         target='_blank'
         rel='noopener noreferrer'
       >
-        <FontAwesomeIcon
-          icon={linkedinIcon}
-          height={20}
-          width={20}
-          className='social-icon'
-        />
+        <FontAwesomeIcon icon={linkedinIcon} className='social-icon' />
       </a>
       <span
         className='social-links-line absolute bottom-0 left-2/4 h-20'

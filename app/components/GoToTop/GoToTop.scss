@@ -1,0 +1,19 @@
+$prefix: go-to-top;
+
+.#{$prefix} {
+  bottom: 35px;
+  right: 15px;
+
+  @media (min-width: theme('screens.md')) {
+    bottom: 20px;
+    right: 75px;
+  }
+
+  .top-container {
+    background-color: transparent;
+    border-color: var(--color-primary);
+    .back-to-top-icon {
+      fill: var(--color-primary);
+    }
+  }
+}
