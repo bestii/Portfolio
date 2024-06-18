@@ -1,3 +1,4 @@
+import { Footer } from '@/app/components';
 import type { Metadata } from 'next';
 import { Barlow } from 'next/font/google';
 import { FC, PropsWithChildren } from 'react';
@@ -24,7 +25,10 @@ export const metadata: Metadata = {
 const RootLayout: FC<PropsWithChildren> = ({ children }) => {
   return (
     <html lang='en' className={`${barlow.variable} font-sans`}>
-      <body>{children}</body>
+      <body>
+        <main>{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 };
