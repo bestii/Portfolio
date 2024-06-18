@@ -3,13 +3,14 @@
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { FC, useEffect, useState } from 'react';
+
 import './GoToTop.scss';
 
 const GoToTop: FC = () => {
   const [showGoTop, setShowGoTop] = useState(false);
 
   const handleVisibleButton = () => {
-    setShowGoTop(window.pageYOffset > 600);
+    setShowGoTop(window.scrollY > 600);
   };
 
   const handleScrollUp = () => {
@@ -21,14 +22,20 @@ const GoToTop: FC = () => {
   }, []);
 
   return (
-    <button
-      className='go-to-top fixed z-50 cursor-pointer'
-      onClick={handleScrollUp}
-    >
-      <div className='top-container rounded border text-center'>
-        <FontAwesomeIcon icon={faArrowUp} />
-      </div>
-    </button>
+    <div className={`go-to-top fixed z-50 text-center`}>
+      {showGoTop ? (
+        <button
+          className='back-to-top-btn cursor-pointer rounded border px-3 py-2'
+          onClick={handleScrollUp}
+        >
+          <FontAwesomeIcon
+            icon={faArrowUp}
+            className='back-to-top-icon'
+            size='lg'
+          />
+        </button>
+      ) : null}
+    </div>
   );
 };
 
