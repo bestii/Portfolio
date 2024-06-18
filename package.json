@@ -12,9 +12,12 @@
     "open-browser": "start http://localhost:3000"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-brands-svg-icons": "^6.5.2",
+    "@fortawesome/free-regular-svg-icons": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "next": "14.2.4",
-    "prettier": "^3.3.2",
-    "prettier-plugin-tailwindcss": "^0.6.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "sass": "^1.77.6"
@@ -27,7 +30,9 @@
     "eslint-config-next": "14.2.4",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.4",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "prettier": "^3.3.2",
+    "prettier-plugin-tailwindcss": "^0.6.5"
   },
   "packageManager": "pnpm@9.4.0+sha256.b6fd0bfda555e7e584ad7e56b30c68b01d5a04f9ee93989f4b93ca8473c49c74"
 }
