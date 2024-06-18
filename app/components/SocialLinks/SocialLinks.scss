@@ -1,0 +1,18 @@
+$prefix: site-social-links-footer;
+
+.#{$prefix} {
+  .social-link {
+    &:hover,
+    &:active {
+      background-color: var(--color-primary);
+    }
+    .social-icon {
+      color: var(--color);
+      @apply text-xl;
+    }
+  }
+  .social-links-line {
+    background-color: var(--color-primary);
+    width: 2px;
+  }
+}
