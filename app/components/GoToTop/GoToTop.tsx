@@ -22,20 +22,22 @@ const GoToTop: FC = () => {
   }, []);
 
   return (
-    <div className={`go-to-top fixed z-50 text-center`}>
+    <>
       {showGoTop ? (
-        <button
-          className='back-to-top-btn cursor-pointer rounded border px-3 py-2'
-          onClick={handleScrollUp}
-        >
-          <FontAwesomeIcon
-            icon={faArrowUp}
-            className='back-to-top-icon'
-            size='lg'
-          />
-        </button>
+        <div className='go-to-top animate-fadeIn fixed z-50 text-center'>
+          <button
+            className='back-to-top-btn cursor-pointer rounded border px-3 py-2'
+            onClick={handleScrollUp}
+          >
+            <FontAwesomeIcon
+              icon={faArrowUp}
+              className='back-to-top-icon'
+              size='lg'
+            />
+          </button>
+        </div>
       ) : null}
-    </div>
+    </>
   );
 };
 
