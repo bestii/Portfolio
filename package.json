@@ -2,8 +2,9 @@
   "name": "portfolio",
   "version": "2.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "pnpm open-browser && next dev",
+    "dev": "pnpm open-browser && next dev --turbo",
     "build": "next build",
     "preview": "next start",
     "start": "pnpm dev",
