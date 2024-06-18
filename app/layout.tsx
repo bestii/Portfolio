@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 
 const RootLayout: FC<PropsWithChildren> = ({ children }) => {
   return (
-    <html lang='en' className={`${barlow.variable} font-sans`}>
+    <html lang='en' className={`${barlow.variable} dark-mode font-sans`}>
       <body>
         <main>{children}</main>
         <Footer />
