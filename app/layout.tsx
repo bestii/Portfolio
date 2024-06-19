@@ -1,4 +1,4 @@
-import { Footer, Header } from '@/app/components';
+import { ChangeColorMode, Footer, Header } from '@/app/components';
 import type { Metadata } from 'next';
 import { Barlow } from 'next/font/google';
 import { FC, PropsWithChildren } from 'react';
@@ -27,7 +27,10 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => {
     <html lang='en' className={`${barlow.variable} dark-mode font-sans`}>
       <body>
         <Header />
-        <main>{children}</main>
+        <main>
+          <ChangeColorMode />
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
