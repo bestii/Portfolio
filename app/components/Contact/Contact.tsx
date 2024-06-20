@@ -55,7 +55,7 @@ const Contact: FC = async () => {
               >
                 <p>
                   <strong>Please correct the following error(s):</strong>
-                  <ul>{/* <li v-for='error in errors'>{{ error }}</li> */}</ul>
+                  {/* <ul><li v-for='error in errors'>{{ error }}</li></ul> */}
                 </p>
               </div>
             </div>

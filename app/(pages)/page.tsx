@@ -9,8 +9,8 @@ import {
 const Home = () => {
   return (
     <>
-      <AboutMe />
       <Introduction />
+      <AboutMe />
       <Experience />
       <Services />
       <Contact />
