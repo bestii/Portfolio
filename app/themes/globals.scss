@@ -33,6 +33,12 @@ body {
   background-color: var(--bg);
   color: var(--color);
   transition: background-color 0.3s;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  main {
+    flex: 1 0 auto;
+  }
 }
 
 a {

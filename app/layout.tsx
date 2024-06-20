@@ -1,4 +1,4 @@
-import { Footer } from '@/app/components';
+import { ChangeColorMode, Footer, Header } from '@/app/components';
 import type { Metadata } from 'next';
 import { Barlow } from 'next/font/google';
 import { FC, PropsWithChildren } from 'react';
@@ -14,8 +14,6 @@ const barlow = Barlow({
   variable: '--font-barlow',
 });
 
-// Add Roboto-mono font of needed.
-
 export const metadata: Metadata = {
   title: 'Bestin John',
   description:
@@ -28,7 +26,11 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => {
   return (
     <html lang='en' className={`${barlow.variable} dark-mode font-sans`}>
       <body>
-        <main>{children}</main>
+        <Header />
+        <main>
+          <ChangeColorMode />
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
