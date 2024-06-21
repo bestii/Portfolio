@@ -1,4 +1,10 @@
 import { getContact } from '@/app/services';
+import {
+  faAt,
+  faLocationDot,
+  faMobileScreen,
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { FC } from 'react';
 
 import './Contact.scss';
@@ -21,7 +27,7 @@ const Contact: FC = async () => {
         <div className='contact-details'>
           <div className='contact-info mb-8 flex'>
             <div className='contact-info-icon relative top-0.5 mr-4 flex h-6 items-center'>
-              {/* <IconEmail /> */}
+              <FontAwesomeIcon icon={faAt} />
             </div>
             <span className='contact-info-text'>
               <p>
@@ -32,13 +38,13 @@ const Contact: FC = async () => {
           </div>
           <div className='contact-info mb-8 flex'>
             <div className='contact-info-icon relative top-0.5 mr-4 flex h-6 items-center'>
-              {/* <IconMobile /> */}
+              <FontAwesomeIcon icon={faMobileScreen} />
             </div>
             <span className='contact-info-text'>{contact.mobile}</span>
           </div>
           <div className='contact-info mb-8 flex'>
             <div className='contact-info-icon relative top-0.5 mr-4 flex h-6 items-center'>
-              {/* <IconPin /> */}
+              <FontAwesomeIcon icon={faLocationDot} />
             </div>
             <span className='contact-info-text'>{contact.address}</span>
           </div>
