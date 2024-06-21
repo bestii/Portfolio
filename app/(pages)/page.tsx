@@ -10,10 +10,12 @@ const Home = () => {
   return (
     <>
       <Introduction />
-      <AboutMe />
-      <Experience />
-      <Services />
-      <Contact />
+      <div className='container'>
+        <AboutMe />
+        <Experience />
+        <Services />
+        <Contact />
+      </div>
     </>
   );
 };

@@ -1,0 +1,10 @@
+$prefix: header;
+
+.#{$prefix} {
+  .nav-bar {
+    background-color: var(--bg);
+  }
+  .empty-space {
+    height: 65px;
+  }
+}
