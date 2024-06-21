@@ -1,11 +1,14 @@
 import { getIntroduction } from '@/app/services';
 import { FC } from 'react';
 
+import { imgSiteBanner } from '@/app/assets';
+import Image from 'next/image';
 import './Introduction.scss';
 
 const Introduction: FC = async () => {
   const response = await getIntroduction();
   const experience = await response.json();
+
   return (
     <section id='introduction' className='introduction mb-10'>
       <div className='container-fluid'>
@@ -17,12 +20,10 @@ const Introduction: FC = async () => {
                 <span className='line line-horizontal absolute left-2 right-0 top-0.5'></span>
               </div>
             </div>
-
             <h1 className='site-title my-2'>
               <strong>{experience.name}</strong>
               {experience.caption}
             </h1>
-
             <div className='intro-box bg-shadow relative mb-4 mt-7 rounded-sm p-7 lg:mb-0 lg:ml-7'>
               <p className='site-subtitle mb-7 max-w-lg text-xl'>
                 {experience.description}
@@ -30,12 +31,12 @@ const Introduction: FC = async () => {
             </div>
           </div>
           <div className='intro-img m-0'>
-            {/* <picture>
-          <source media="(max-width:425px)" srcset="@/assets/img/site-banner-small.jpg">
-          <source media="(min-width:425px)" srcset="@/assets/img/site-banner.jpg">
-          <img src="@/assets/img/site-banner.jpg" width="1200" height="800"
-            alt="A table with laptop, pen, notebook, mobile and coffee" />
-        </picture> */}
+            <Image
+              src={imgSiteBanner}
+              width={1200}
+              height={800}
+              alt='A table with laptop, pen, notebook, mobile and coffee'
+            />
           </div>
         </div>
       </div>

@@ -1,6 +1,8 @@
 import { getAboutMe } from '@/app/services';
 import { FC } from 'react';
 
+import { imgPortrait } from '@/app/assets';
+import Image from 'next/image';
 import './AboutMe.scss';
 
 const AboutMe: FC = async () => {
@@ -20,23 +22,13 @@ const AboutMe: FC = async () => {
       <div className='flex flex-wrap'>
         <div className='about-me-img relative mb-20 md:mb-0'>
           <div className='img-bg absolute'></div>
-          {/* <picture>
-            <source
-              media='(max-width:425px)'
-              srcset='@/assets/img/portrait-small.jpg'
-            />
-            <source
-              media='(min-width:425px)'
-              srcset='@/assets/img/portrait.jpg'
-            />
-            <img
-              className='portrait-img relative'
-              src='@/assets/img/portrait.jpg'
-              alt='Bestin John potrait image'
-              width='645'
-              height='860'
-            />
-          </picture> */}
+          <Image
+            src={imgPortrait}
+            className='portrait-img relative'
+            alt='Bestin John potrait image'
+            width={645}
+            height={860}
+          />
         </div>
         <div className='about-me-content'>
           <p>{aboutMe.mainDescription1}</p>

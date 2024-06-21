@@ -8,6 +8,7 @@ import Header from './Header/Header';
 import Introduction from './Introduction/Introduction';
 import Services from './Services/Services';
 import SocialLinks from './SocialLinks/SocialLinks';
+import Timeline from './Timeline/Timeline';
 
 export {
   AboutMe,
@@ -20,4 +21,5 @@ export {
   Introduction,
   Services,
   SocialLinks,
+  Timeline,
 };
