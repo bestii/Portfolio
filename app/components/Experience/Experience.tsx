@@ -1,3 +1,4 @@
+import { Timeline } from '@/app/components';
 import { getExperience } from '@/app/services';
 import { FC } from 'react';
 
@@ -19,8 +20,8 @@ const Experience: FC = async () => {
         </p>
       </div>
       <div className='experience-grid flex flex-wrap'>
-        {/* <Timeline :timeline="education" />
-    <Timeline :timeline="profession" /> */}
+        <Timeline timeline={experience.education} />
+        <Timeline timeline={experience.profession} />
       </div>
     </section>
   );
