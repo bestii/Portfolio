@@ -1,0 +1,32 @@
+<section id="introduction" class="introduction mb-10">
+  <div class="container-fluid">
+    <div class="flex flex-wrap">
+      <div class="intro-content lg:mt-16 lg:left-16 relative z-0 lg:px-0 px-4">
+        <div class="lg:left-14 mt-7 relative flex items-center">
+          <div class="intro-text text-xl">{{introText}}</div>
+          <div class="intro-line relative flex-1">
+            <span class="line line-horizontal absolute right-0 top-0.5 left-2"></span>
+          </div>
+        </div>
+
+        <h1 class="site-title my-2">
+          <strong>{{name}}</strong>
+          {{caption}}
+        </h1>
+
+        <div class="intro-box p-7 lg:ml-7 mt-7 relative rounded-sm bg-shadow lg:mb-0 mb-4">
+          <p class="site-subtitle max-w-lg mb-7 text-xl">{{description}}</p>
+        </div>
+      </div>
+      <div class="intro-img m-0">
+        <picture>
+          <source media="(max-width:425px)" srcset="@/assets/img/site-banner-small.jpg">
+          <source media="(min-width:425px)" srcset="@/assets/img/site-banner.jpg">
+          <img src="@/assets/img/site-banner.jpg" width="1200" height="800"
+            alt="A table with laptop, pen, notebook, mobile and coffee" />
+        </picture>
+      </div>
+
+    </div>
+  </div>
+</section>

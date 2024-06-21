@@ -1,0 +1,11 @@
+<section id="experience" class="experience md:my-32 my-10">
+  <div class="experience-header mb-10">
+    <h2>{{title}}</h2>
+    <div class="line line-horizontal line-heading" aria-hidden="true"></div>
+    <p class="experience-header-p max-w-xs text-base">{{description}}</p>
+  </div>
+  <div class="experience-grid flex flex-wrap">
+    <Timeline :timeline="education" />
+    <Timeline :timeline="profession" />
+  </div>
+</section>

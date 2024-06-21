@@ -1,0 +1,90 @@
+<section id="about" class="about md:my-32 my-10">
+  <div class="about-header mb-10">
+    <h2>{{title}}</h2>
+    <div class="line line-horizontal line-heading" aria-hidden="true"></div>
+    <p class="about-header-p">{{description}}</p>
+  </div>
+  <div class="flex flex-wrap">
+    <div class="about-me-img relative md:mb-0 mb-20">
+      <div class="img-bg absolute"></div>
+
+      <picture>
+        <source
+          media="(max-width:425px)"
+          srcset="@/assets/img/portrait-small.jpg"
+        />
+        <source media="(min-width:425px)" srcset="@/assets/img/portrait.jpg" />
+        <img
+          class="portrait-img relative"
+          src="@/assets/img/portrait.jpg"
+          alt="Bestin John potrait image"
+          width="645"
+          height="860"
+        />
+      </picture>
+    </div>
+    <div class="about-me-content">
+      <p>{{mainDescription1}}</p>
+      <p>{{mainDescription2}}</p>
+      <br />
+      <div class="skill-list">
+        <h3>Skills List</h3>
+        <div class="about-me-skill-list flex">
+          <ul class="dash-list">
+            <li class="dash-list-item" v-for="skill in skillList1">
+              <span class="dash-list-dash" aria-hidden="true"></span>
+              {{skill}}
+            </li>
+          </ul>
+          <ul class="dash-list">
+            <li class="dash-list-item" v-for="skill in skillList2">
+              <span class="dash-list-dash" aria-hidden="true"></span>
+              {{skill}}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="skill-bar">
+        <h3>Skills Bar</h3>
+        <ul class="">
+          <li class="skill-bar">
+            <div class="skill-bar-title">
+              <span>HTML</span>
+              <span class="skill-bar-value">90%</span>
+            </div>
+            <div class="skill-bar-bg" aria-hidden="true">
+              <div
+                class="skill-bar-amount bar-90"
+                data-skill-bar-amount="90"
+              ></div>
+            </div>
+          </li>
+          <li class="skill-bar">
+            <div class="skill-bar-title">
+              <span>CSS</span>
+              <span class="skill-bar-value">80%</span>
+            </div>
+            <div class="skill-bar-bg" aria-hidden="true">
+              <div
+                class="skill-bar-amount bar-80"
+                data-skill-bar-amount="80"
+              ></div>
+            </div>
+          </li>
+          <li class="skill-bar">
+            <div class="skill-bar-title">
+              <span>JavaScript</span>
+              <span class="skill-bar-value">95%</span>
+            </div>
+            <div class="skill-bar-bg" aria-hidden="true">
+              <div
+                class="skill-bar-amount bar-95"
+                data-skill-bar-amount="95"
+              ></div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

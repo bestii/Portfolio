@@ -1,0 +1,23 @@
+<aside class="settings-menu flex fixed right-0 items-start top-1/4 z-20" v-bind:class="{open:isOpen}">
+  <button class="settings-toggle z-10 select-none" aria-label="Close theme options dialog" aria-expanded="true"
+    aria-controls="settings" @click="toggleSetting">
+    <IconSetting />
+  </button>
+  <div id="settings" class="settings-menu-options w-60 p-4">
+    <template>
+      <ul>
+        <li v-for="color of colors" :key="color" class="p-1 inline-block">
+          <component :is="`icon-${color}`" @click="$colorMode.preference = color" :class="getClasses(color)" />
+        </li>
+      </ul>
+      <ColorScheme placeholder="..." tag="span">
+        <div class="text-center">
+          <span>color mode: <strong>{{ $colorMode.preference }}</strong></span>
+          <p v-if="$colorMode.preference === 'system'">
+            (<em>{{ $colorMode.value }}</em> mode detected)
+          </p>
+        </div>
+      </ColorScheme>
+    </template>
+  </div>
+</aside>

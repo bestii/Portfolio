@@ -1,0 +1,35 @@
+.services-header-p {
+  color: var(--color-secondary);
+  max-width: 17.5rem;
+  font-size: 1rem;
+}
+
+.service-box{
+    background-color: var(--border-color);
+    height: 100%;
+    border-radius: 0.125rem;
+}
+
+.service-icon svg {
+  width: 40px;
+  height: 40px;
+  fill: var(--color-primary);
+}
+
+.line-service {
+  width: 6.875rem;
+  position: relative;
+  left: -3.1875rem;
+  margin: 1rem 0;
+}
+
+@include md{
+  .service-item {
+    flex: 1 1 30%;
+  }
+  .service-item {
+    &:not(:last-child) {
+      margin-right: 5%;
+    }
+  }
+}

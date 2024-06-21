@@ -1,0 +1,18 @@
+{
+    "title": "Services",
+    "description": "What kind of services can I offer ?",
+    "services": [
+        {
+            "name": "Development",
+            "text": "Clean and optimized pages for performance, search engines, and converting users to customers."
+        },
+        {
+            "name": "Mobile-friendly",
+            "text": "A responsive design makes your website accessible to all users, regardless of their device."
+        },
+        {
+            "name": "eCommerce",
+            "text": "Integration of eCommerce platforms, payment gateways, custom product templates, and more."
+        }
+    ]
+}

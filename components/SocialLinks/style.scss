@@ -1,0 +1,15 @@
+.site-social-links-footer {
+      .social-link{
+        &:hover, &:active{
+          background-color: var(--color-primary);
+        }
+        .social-icon {
+          fill: var(--color);
+        }
+      }
+      .social-links-line {
+        background-color: var(--color-primary);
+        width: 2px;
+        //transform: translateX(-50%);
+      }
+}

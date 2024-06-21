@@ -1,0 +1,78 @@
+<section id="contact" class="contact mb-10">
+  <div class="contact-header mb-10">
+    <h2>{{title}}</h2>
+    <div class="line line-horizontal line-heading" aria-hidden="true"></div>
+    <p class="contact-header-p">{{description}}</p>
+  </div>
+  <div class="flex flex-wrap">
+    <div class="contact-details">
+      <div class="contact-info flex mb-8">
+        <div class="contact-info-icon flex relative mr-4 items-center top-0.5 h-6">
+          <IconEmail />
+        </div>
+        <span class="contact-info-text">
+          <p>{{email}}<span class="hidden">null</span>.com</p>
+        </span>
+      </div>
+      <div class="contact-info flex mb-8">
+        <div class="contact-info-icon flex relative mr-4 items-center top-0.5 h-6">
+          <IconMobile />
+        </div>
+        <span class="contact-info-text">{{mobile}}</span>
+      </div>
+      <div class="contact-info flex mb-8">
+        <div class="contact-info-icon flex relative mr-4 items-center top-0.5 h-6">
+          <IconPin />
+        </div>
+        <span class="contact-info-text">
+          {{address}}
+        </span>
+      </div>
+    </div>
+    <div class="contact-form bg-shadow">
+      <form action="" method="POST" enctype="multipart/form-data" class="form-contact relative py-5 px-5"
+        @submit="checkForm">
+        <div class="form-group">
+          <div id="form-live-region" class="form-message rounded" role="alert" aria-atomic="true"
+            data-error-instruction="There were some issues with the form submission" v-if="errors.length">
+            <p>
+              <strong>Please correct the following error(s):</strong>
+              <ul>
+                <li v-for="error in errors">{{ error }}</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+        <div class="form-group">
+          <p>All fields are required.</p>
+        </div>
+        <div class="flex flex-wrap">
+          <div class="form-group form-name w-full">
+            <label class="form-label inline-block mb-2" for="form-name">Name</label>
+            <input class="form-control form-field" type="text" id="form-name" name="name"
+              data-error-message="Name is a require field." aria-required="true" v-model="contactName">
+          </div>
+          <div class="form-group form-email w-full">
+            <label class="form-label inline-block mb-2" for="form-email">Email</label>
+            <input class="form-control form-field" type="email" id="form-email" name="email"
+              data-error-message="Insert a valid e-mail." aria-required="true" v-model="contactEmail">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label inline-block mb-2" for="form-message">Message</label>
+          <textarea class="form-control form-field h-auto" id="form-message" rows="5" name="message"
+            data-error-message="Message is a require field." aria-required="true" v-model="contactMsg"></textarea>
+        </div>
+        <div class="form-group flex justify-end">
+          <button type="submit" id="contact-form__submit-button" class="button button-default"
+            :disabled="submitDisabled">
+            <span class="button-text line-underline">Submit</span>
+            <span class="button-spinner spinner-dual-ring">
+              <span></span>
+            </span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

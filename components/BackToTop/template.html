@@ -1,0 +1,12 @@
+  <transition name="back-to-top-fade">
+    <div class="vue-back-to-top cursor-pointer fixed z-50" v-if="visible" @click="backToTop">
+      <slot>
+        <div class="top-container text-center rounded border">
+          <IconTop />
+          <!-- <span>
+            Top
+          </span> -->
+        </div>
+      </slot>
+    </div>
+  </transition>

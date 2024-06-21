@@ -1,0 +1,24 @@
+<section id="services" class="services mb-10">
+  <div class="services-header mb-10">
+    <h2>{{title}}</h2>
+    <div class="line line-horizontal line-heading" aria-hidden="true"></div>
+    <p class="services-header-p">{{description}}
+    </p>
+  </div>
+  <ul class="flex flex-wrap service-container">
+    <li class="service-item mb-10" v-for="service in services">
+      <div class="service-box p-6">
+        <div class="service-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path
+              d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.07-.12C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.96 17.55 11 21 11 21z">
+            </path>
+          </svg>
+        </div>
+        <div class="line line-horizontal line-service"></div>
+        <h3 class="text-2xl">{{service.name}}</h3>
+        <p class="service-p mb-0">{{service.text}}</p>
+      </div>
+    </li>
+  </ul>
+</section>

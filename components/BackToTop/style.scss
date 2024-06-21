@@ -1,0 +1,27 @@
+.back-to-top-fade-enter-active,
+.back-to-top-fade-leave-active {
+  transition: opacity .7s;
+}
+
+.back-to-top-fade-enter,
+.back-to-top-fade-leave-to {
+  opacity: 0;
+}
+
+.vue-back-to-top {
+  bottom: 35px;
+  right: 15px;
+
+   @include md{
+     bottom: 20px;
+     right: 75px;
+   };
+
+  .top-container {
+    background-color: transparent;
+    border-color: var(--color-primary);
+    .back-to-top-icon {
+      fill: var(--color-primary);
+    }
+  }
+}

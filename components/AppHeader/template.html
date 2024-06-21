@@ -1,0 +1,42 @@
+<header>
+  <nav class="nav-bar fixed px-2 py-5 top-0 w-full z-40 shadow-xl">
+    <div class="flex justify-between">
+      <!-- Logo -->
+      <div class="flex">
+        <div class="logo-container">
+          <NuxtLink to="/" class="">
+            <span class="font-bold ">Bestin John</span>
+          </NuxtLink>
+        </div>
+      </div>
+      <!-- Primary Nav -->
+      <div class="flex align-middle">
+        <ol class="flex list-none justify-between">
+          <li class="mx-2">
+            <a class="p-2 cursor-pointer" @click="scrollToSection('about')"
+              >About</a
+            >
+          </li>
+          <li class="mx-2">
+            <a class="p-2 cursor-pointer" @click="scrollToSection('experience')"
+              >Experience</a
+            >
+          </li>
+          <li class="mx-2">
+            <a class="p-2 cursor-pointer" @click="scrollToSection('services')"
+              >Services</a
+            >
+          </li>
+          <li class="mx-2">
+            <a class="p-2 cursor-pointer" @click="scrollToSection('contact')"
+              >Contact</a
+            >
+          </li>
+        </ol>
+      </div>
+      <!-- Mobile Icon -->
+      <div class="hidden"></div>
+    </div>
+  </nav>
+  <div class="empty-space"></div>
+</header>
