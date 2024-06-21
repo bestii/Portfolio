@@ -5,15 +5,13 @@ $prefix: introduction;
     max-width: 80%;
   }
 
-  @media (min-width: theme('screens.lg')) {
-    .introduction {
-      .intro-content {
-        flex: 1 1 42%;
-      }
+  @media (min-width: theme('screens.md')) {
+    .intro-content {
+      flex: 1 1 42%;
+    }
 
-      .intro-img {
-        flex: 1 1 58%;
-      }
+    .intro-img {
+      flex: 1 1 58%;
     }
   }
 }

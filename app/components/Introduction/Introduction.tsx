@@ -1,6 +1,8 @@
 import { getIntroduction } from '@/app/services';
 import { FC } from 'react';
 
+import { imgSiteBanner } from '@/app/assets';
+import Image from 'next/image';
 import './Introduction.scss';
 
 const Introduction: FC = async () => {
@@ -36,6 +38,12 @@ const Introduction: FC = async () => {
           <img src="@/assets/img/site-banner.jpg" width="1200" height="800"
             alt="A table with laptop, pen, notebook, mobile and coffee" />
         </picture> */}
+            <Image
+              src={imgSiteBanner}
+              width={1200}
+              height={800}
+              alt='A table with laptop, pen, notebook, mobile and coffee'
+            />
           </div>
         </div>
       </div>
