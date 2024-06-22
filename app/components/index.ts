@@ -1,6 +1,7 @@
 import AboutMe from './AboutMe/AboutMe';
 import ChangeColorMode from './ChangeColorMode/ChangeColorMode';
 import Contact from './Contact/Contact';
+import SendMsgTemplate from './Emails/SendMsgTemplate';
 import Experience from './Experience/Experience';
 import Footer from './Footer/Footer';
 import GoToTop from './GoToTop/GoToTop';
@@ -19,6 +20,7 @@ export {
   GoToTop,
   Header,
   Introduction,
+  SendMsgTemplate,
   Services,
   SocialLinks,
   Timeline,
