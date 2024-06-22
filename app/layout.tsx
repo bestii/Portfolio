@@ -1,4 +1,5 @@
 import { ChangeColorMode, Footer, Header } from '@/app/components';
+import { ThemeProvider } from '@/app/providers';
 import type { Metadata, Viewport } from 'next';
 import { Barlow } from 'next/font/google';
 import { FC, PropsWithChildren } from 'react';
@@ -61,15 +62,15 @@ export const viewport: Viewport = {
 
 const RootLayout: FC<PropsWithChildren> = ({ children }) => {
   return (
-    <html lang='en' className={`${barlow.variable} dark-mode font-sans`}>
-      <body>
+    <html lang='en' className={`${barlow.variable} font-sans`}>
+      <ThemeProvider>
         <Header />
         <main>
           <ChangeColorMode />
           {children}
         </main>
         <Footer />
-      </body>
+      </ThemeProvider>
     </html>
   );
 };

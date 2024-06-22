@@ -1,17 +1,27 @@
+'use client';
+
 import { faGear } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { FC } from 'react';
+import { FC, useState } from 'react';
 
 import './ChangeColorMode.scss';
 
 const ChangeColorMode: FC = () => {
+  const [isOpen, setOpen] = useState(false);
+
+  const toggleSettings = () => {
+    setOpen((prev) => !prev);
+  };
   return (
-    <aside className='settings-menu fixed right-0 top-1/4 z-20 flex items-start'>
+    <aside
+      className={`settings-menu fixed right-0 top-1/4 z-20 flex items-start ${isOpen ? 'open' : ''}`}
+    >
       <button
         className='settings-toggle z-10 select-none'
         aria-label='Close theme options dialog'
         aria-expanded='true'
         aria-controls='settings'
+        onClick={toggleSettings}
       >
         <FontAwesomeIcon icon={faGear} />
       </button>
