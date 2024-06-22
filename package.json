@@ -1,10 +1,10 @@
 {
   "name": "portfolio",
-  "version": "2.1.2",
+  "version": "2.1.4",
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "pnpm open-browser && next dev --turbo",
+    "dev": "pnpm open-browser && next dev",
     "build": "next build",
     "preview": "next start",
     "start": "pnpm dev",
@@ -21,10 +21,11 @@
     "next": "14.2.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "resend": "^3.3.0",
     "sass": "^1.77.6"
   },
   "devDependencies": {
-    "@types/node": "^20.14.7",
+    "@types/node": "^20.14.8",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "eslint": "^8",
