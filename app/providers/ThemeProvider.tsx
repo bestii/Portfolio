@@ -8,6 +8,7 @@ const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
   const [selectedTheme, setTheme] = useState<AppTheme>('dark');
 
   const setSelectedTheme = (theme: AppTheme) => {
+    if (theme === 'system') return;
     setTheme(theme);
   };
 
