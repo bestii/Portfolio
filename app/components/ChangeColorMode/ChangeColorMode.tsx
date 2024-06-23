@@ -11,7 +11,7 @@ import ThemeOptions from './ThemeOptions/ThemeOptions';
 const ChangeColorMode: FC = () => {
   const [isOpen, setOpen] = useState(false);
 
-  const { selectedTheme, } = useThemeContext();
+  const { selectedTheme, preference } = useThemeContext();
 
   const toggleSettings = () => {
     setOpen((prev) => !prev);
@@ -38,7 +38,7 @@ const ChangeColorMode: FC = () => {
           </span>
           {selectedTheme == 'system' && (
             <p>
-              (<em>{'$colorMode.value'}</em> mode detected)
+              (<em>{preference}</em> mode detected)
             </p>
           )}
         </div>

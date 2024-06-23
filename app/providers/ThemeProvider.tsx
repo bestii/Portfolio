@@ -22,6 +22,7 @@ const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
   );
 
   const getPreference = useCallback(() => {
+    if (!(typeof window !== 'undefined')) return 'dark';
     const darkModeMediaQuery = window.matchMedia(
       '(prefers-color-scheme: dark)'
     );
@@ -30,11 +31,10 @@ const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    if (!selectedTheme) {
-      setTheme('system');
+    if (selectedTheme === 'system') {
       setPreference(getPreference());
     }
-  }, []);
+  }, [getPreference, selectedTheme, setTheme]);
 
   const setSelectedTheme = useCallback(
     (theme: AppTheme) => {
@@ -63,8 +63,6 @@ const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
     }),
     [preference, selectedTheme, setSelectedTheme]
   );
-
-  console.log('themeClassPrefix', preference, themeClassPrefix);
 
   return (
     <ThemeContext.Provider value={contextValues}>
