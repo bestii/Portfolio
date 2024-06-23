@@ -4,15 +4,19 @@ import { faGear } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { FC, useState } from 'react';
 
+import { useThemeContext } from '@/app/contexts';
 import './ChangeColorMode.scss';
 import ThemeOptions from './ThemeOptions/ThemeOptions';
 
 const ChangeColorMode: FC = () => {
   const [isOpen, setOpen] = useState(false);
 
+  const { selectedTheme, preference } = useThemeContext();
+
   const toggleSettings = () => {
     setOpen((prev) => !prev);
   };
+
   return (
     <aside
       className={`settings-menu fixed right-0 top-1/4 z-20 flex items-start ${isOpen ? 'open' : ''}`}
@@ -30,11 +34,13 @@ const ChangeColorMode: FC = () => {
         <ThemeOptions />
         <div className='text-center'>
           <span>
-            color mode: <strong>{'$colorMode.preference'}</strong>
+            color mode: <strong>{selectedTheme}</strong>
           </span>
-          <p>
-            (<em>{'$colorMode.value'}</em> mode detected)
-          </p>
+          {selectedTheme == 'system' && (
+            <p>
+              (<em>{preference}</em> mode detected)
+            </p>
+          )}
         </div>
       </div>
     </aside>

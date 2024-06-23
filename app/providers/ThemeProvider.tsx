@@ -1,27 +1,72 @@
 'use client';
 
 import { ThemeContext } from '@/app/contexts';
-import { AppTheme } from '@/app/settings';
-import { FC, PropsWithChildren, useMemo, useState } from 'react';
+import { AppTheme, PreferredOptions } from '@/app/settings';
+import {
+  FC,
+  PropsWithChildren,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react';
+import { useLocalStorage } from 'usehooks-ts';
+
+const LOCAL_STORAGE_KEY = 'theme-mode';
 
 const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
-  const [selectedTheme, setTheme] = useState<AppTheme>('dark');
+  const [preference, setPreference] = useState<PreferredOptions>('');
+  const [selectedTheme, setTheme] = useLocalStorage<AppTheme>(
+    LOCAL_STORAGE_KEY,
+    'system'
+  );
 
-  const setSelectedTheme = (theme: AppTheme) => {
-    setTheme(theme);
-  };
+  const getPreference = useCallback(() => {
+    if (!(typeof window !== 'undefined')) return 'dark';
+    const darkModeMediaQuery = window.matchMedia(
+      '(prefers-color-scheme: dark)'
+    );
+    const isDarkMode = darkModeMediaQuery.matches;
+    return isDarkMode ? 'dark' : 'light';
+  }, []);
+
+  useEffect(() => {
+    if (selectedTheme === 'system') {
+      setPreference(getPreference());
+    }
+  }, [getPreference, selectedTheme, setTheme]);
+
+  const setSelectedTheme = useCallback(
+    (theme: AppTheme) => {
+      if (theme === 'system') {
+        setPreference(getPreference());
+      } else {
+        setPreference('');
+      }
+      setTheme(theme);
+    },
+    [getPreference, setTheme]
+  );
+
+  const themeClassPrefix = useMemo(() => {
+    if (selectedTheme === 'system') {
+      return getPreference();
+    }
+    return selectedTheme;
+  }, [getPreference, selectedTheme]);
 
   const contextValues = useMemo(
     () => ({
       selectedTheme,
       setSelectedTheme,
+      preference,
     }),
-    [selectedTheme]
+    [preference, selectedTheme, setSelectedTheme]
   );
 
   return (
     <ThemeContext.Provider value={contextValues}>
-      <body className={`${selectedTheme}-mode`}>{children}</body>
+      <body className={`${themeClassPrefix}-mode`}>{children}</body>
     </ThemeContext.Provider>
   );
 };
