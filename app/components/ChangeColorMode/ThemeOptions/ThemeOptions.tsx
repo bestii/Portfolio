@@ -8,6 +8,7 @@ import './ThemeOptions.scss';
 
 const ThemeOptions = () => {
   const { selectedTheme, setSelectedTheme } = useThemeContext();
+
   return (
     <ul className='theme-options'>
       {themes.map((theme) => (
