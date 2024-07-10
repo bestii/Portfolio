@@ -9,6 +9,11 @@
     "/^release\\/.*/"
   ],
   "assignees": [
-    "bestii"
-  ]
+    "bestii",
+    "bestin.john"
+  ],
+  "reviewers": [
+    "bestii",
+    "bestin.john"
+  ],
 }
