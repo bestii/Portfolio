@@ -43,5 +43,5 @@
     "typescript": "^5.5.2",
     "webpack": "^5.92.1"
   },
-  "packageManager": "pnpm@9.4.0+sha256.b6fd0bfda555e7e584ad7e56b30c68b01d5a04f9ee93989f4b93ca8473c49c74"
+  "packageManager": "pnpm@9.5.0"
 }
