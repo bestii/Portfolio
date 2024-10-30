@@ -12,36 +12,36 @@
     "open-browser": "start http://localhost:3000"
   },
   "dependencies": {
-    "@ducanh2912/next-pwa": "^10.2.8",
+    "@ducanh2912/next-pwa": "^10.2.9",
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
     "@fortawesome/free-brands-svg-icons": "^6.6.0",
     "@fortawesome/free-regular-svg-icons": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
-    "@hookform/resolvers": "^3.9.0",
-    "next": "14.2.15",
+    "@hookform/resolvers": "^3.9.1",
+    "next": "15.0.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-hook-form": "^7.52.2",
-    "react-toastify": "^10.0.5",
+    "react-hook-form": "^7.53.1",
+    "react-toastify": "^10.0.6",
     "resend": "^4.0.0",
-    "sass": "^1.77.8",
-    "sharp": "^0.33.4",
+    "sass": "^1.77.6",
+    "sharp": "^0.33.5",
     "usehooks-ts": "^3.1.0",
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@types/node": "^22.3.0",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
+    "@types/node": "^22.8.4",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
     "eslint": "^8.57.0",
-    "eslint-config-next": "14.2.15",
-    "postcss": "^8.4.41",
+    "eslint-config-next": "15.0.2",
+    "postcss": "^8.4.47",
     "prettier": "^3.3.3",
-    "prettier-plugin-tailwindcss": "^0.6.6",
-    "tailwindcss": "^3.4.10",
-    "typescript": "^5.5.4",
-    "webpack": "^5.93.0"
+    "prettier-plugin-tailwindcss": "^0.6.8",
+    "tailwindcss": "^3.4.14",
+    "typescript": "^5.6.3",
+    "webpack": "^5.95.0"
   },
-  "packageManager": "pnpm@9.7.0+sha256.b35018fbfa8f583668b2649e407922a721355cd81f61beeb4ac1d4258e585559"
+  "packageManager": "pnpm@9.12.3+sha256.24235772cc4ac82a62627cd47f834c72667a2ce87799a846ec4e8e555e2d4b8b"
 }
