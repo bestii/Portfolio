@@ -1,19 +1,27 @@
-import { SendMsgTemplate } from '@/app/components';
+import { ContactFormEmailTemplate } from '@/app/components';
 import { RESEND_API_KEY } from '@/app/settings';
 import { Resend } from 'resend';
 
 const resend = new Resend(RESEND_API_KEY);
 
+type EmailContent = {
+  name: string;
+  email: string;
+  message: string;
+};
+
 export async function POST(request: Request) {
-  const body = await request.json();
-  console.log(body);
+  const body: EmailContent = await request.json();
+  const { name, email, message } = body;
   try {
     const { data, error } = await resend.emails.send({
       from: 'Bestin John <message@bestinjohn.com>',
       to: ['bestinjohn1993@gmail.com'],
-      subject: 'Hello world',
-      react: SendMsgTemplate({
-        firstName: body.firstName,
+      subject: `New Contact Form Submission from ${name}`,
+      react: ContactFormEmailTemplate({
+        name,
+        email,
+        message,
       }) as React.ReactElement,
     });
 
