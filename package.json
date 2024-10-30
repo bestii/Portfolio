@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "pnpm open-browser && next dev",
+    "dev": "next dev",
     "build": "next build",
     "preview": "next start",
     "start": "pnpm dev",
