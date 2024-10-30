@@ -1,10 +1,9 @@
 import { ChangeColorMode, Footer, Header } from '@/app/components';
 import { ThemeProvider } from '@/app/providers';
+import '@fortawesome/fontawesome-svg-core/styles.css';
 import type { Metadata, Viewport } from 'next';
 import { Barlow } from 'next/font/google';
 import { FC, PropsWithChildren } from 'react';
-
-import '@fortawesome/fontawesome-svg-core/styles.css';
 import './themes/globals.scss';
 
 const barlow = Barlow({

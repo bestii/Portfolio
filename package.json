@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "2.1.5",
+  "version": "2.1.7",
   "private": true,
   "type": "module",
   "scripts": {
@@ -12,31 +12,36 @@
     "open-browser": "start http://localhost:3000"
   },
   "dependencies": {
-    "@ducanh2912/next-pwa": "^10.2.7",
-    "@fortawesome/fontawesome-svg-core": "^6.5.2",
-    "@fortawesome/free-brands-svg-icons": "^6.5.2",
-    "@fortawesome/free-regular-svg-icons": "^6.5.2",
-    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@ducanh2912/next-pwa": "^10.2.9",
+    "@fortawesome/fontawesome-svg-core": "^6.6.0",
+    "@fortawesome/free-brands-svg-icons": "^6.6.0",
+    "@fortawesome/free-regular-svg-icons": "^6.6.0",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
-    "next": "14.2.4",
+    "@hookform/resolvers": "^3.9.1",
+    "next": "15.0.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "resend": "^3.3.0",
+    "react-hook-form": "^7.53.1",
+    "react-toastify": "^10.0.6",
+    "resend": "^4.0.0",
     "sass": "^1.77.6",
-    "usehooks-ts": "^3.1.0"
+    "sharp": "^0.33.5",
+    "usehooks-ts": "^3.1.0",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@types/node": "^20.14.8",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.4",
-    "postcss": "^8.4.38",
-    "prettier": "^3.3.2",
-    "prettier-plugin-tailwindcss": "^0.6.5",
-    "tailwindcss": "^3.4.4",
-    "typescript": "^5.5.2",
-    "webpack": "^5.92.1"
+    "@types/node": "^22.8.4",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "15.0.2",
+    "postcss": "^8.4.47",
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.8",
+    "tailwindcss": "^3.4.14",
+    "typescript": "^5.6.3",
+    "webpack": "^5.95.0"
   },
-  "packageManager": "pnpm@9.4.0+sha256.b6fd0bfda555e7e584ad7e56b30c68b01d5a04f9ee93989f4b93ca8473c49c74"
+  "packageManager": "pnpm@9.12.3+sha256.24235772cc4ac82a62627cd47f834c72667a2ce87799a846ec4e8e555e2d4b8b"
 }
