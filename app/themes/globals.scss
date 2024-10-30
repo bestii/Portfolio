@@ -1,7 +1,5 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@import 'typography.scss';
+@forward 'tailwind.scss';
+@forward 'typography.scss';
 
 :root {
   --color: #243746;
