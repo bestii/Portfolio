@@ -1,9 +1,11 @@
 'use client';
+import { useSendEmail } from '@/app/hooks';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { contactFormSchema, ContactFormValues } from './contactFormSchema';
 
 const ContactForm = () => {
+  const { sendMail, isSendingMail } = useSendEmail();
   const {
     register,
     handleSubmit,
@@ -15,7 +17,7 @@ const ContactForm = () => {
   });
 
   const onSubmit = (data: ContactFormValues) => {
-    console.log(data);
+    sendMail(data);
     reset();
   };
   return (
@@ -92,13 +94,10 @@ const ContactForm = () => {
         <div className='form-group flex justify-end'>
           <button
             type='submit'
-            id='contact-form__submit-button'
             className='button button-default'
+            disabled={isSendingMail}
           >
-            <span className='button-text line-underline'>Submit</span>
-            <span className='button-spinner spinner-dual-ring'>
-              <span></span>
-            </span>
+            <span className='button-text'>Submit</span>
           </button>
         </div>
       </form>

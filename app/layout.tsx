@@ -4,6 +4,8 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 import type { Metadata, Viewport } from 'next';
 import { Barlow } from 'next/font/google';
 import { FC, PropsWithChildren } from 'react';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './themes/globals.scss';
 
 const barlow = Barlow({
@@ -69,6 +71,7 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => {
             <ChangeColorMode />
             {children}
           </main>
+          <ToastContainer />
           <Footer />
         </ThemeProvider>
       </ReactQueryProvider>

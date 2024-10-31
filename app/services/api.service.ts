@@ -25,5 +25,5 @@ export const getServices = (): Promise<Response> => {
 export const postFormSubmission = (
   body: FormSubmissionRequest
 ): Promise<Response> => {
-  return axios.post(`${API_BASE_URL}/email`, body);
+  return axios.post(`/api/email`, body);
 };
