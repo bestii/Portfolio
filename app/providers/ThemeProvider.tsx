@@ -22,7 +22,7 @@ const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
   );
 
   const getPreference = useCallback(() => {
-    if (!(typeof window !== 'undefined')) return 'dark';
+    if (typeof window === 'undefined') return 'dark';
     const darkModeMediaQuery = window.matchMedia(
       '(prefers-color-scheme: dark)'
     );

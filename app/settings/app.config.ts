@@ -23,3 +23,5 @@ export const ThemeToIcon: Record<string, IconDefinition> = {
   dark: faMoon,
   sepia: faMugHot,
 };
+
+

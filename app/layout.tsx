@@ -1,5 +1,5 @@
 import { ChangeColorMode, Footer, Header } from '@/app/components';
-import { ThemeProvider } from '@/app/providers';
+import { ReactQueryProvider, ThemeProvider } from '@/app/providers';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import type { Metadata, Viewport } from 'next';
 import { Barlow } from 'next/font/google';
@@ -62,14 +62,16 @@ export const viewport: Viewport = {
 const RootLayout: FC<PropsWithChildren> = ({ children }) => {
   return (
     <html lang='en' className={`${barlow.variable} font-sans`}>
-      <ThemeProvider>
-        <Header />
-        <main>
-          <ChangeColorMode />
-          {children}
-        </main>
-        <Footer />
-      </ThemeProvider>
+      <ReactQueryProvider>
+        <ThemeProvider>
+          <Header />
+          <main>
+            <ChangeColorMode />
+            {children}
+          </main>
+          <Footer />
+        </ThemeProvider>
+      </ReactQueryProvider>
     </html>
   );
 };

@@ -1,17 +1,12 @@
 import { ContactFormEmailTemplate } from '@/app/components';
 import { RESEND_API_KEY } from '@/app/settings';
+import { FormSubmissionRequest } from '@/types';
 import { Resend } from 'resend';
 
 const resend = new Resend(RESEND_API_KEY);
 
-type EmailContent = {
-  name: string;
-  email: string;
-  message: string;
-};
-
 export async function POST(request: Request) {
-  const body: EmailContent = await request.json();
+  const body: FormSubmissionRequest = await request.json();
   const { name, email, message } = body;
   try {
     const { data, error } = await resend.emails.send({

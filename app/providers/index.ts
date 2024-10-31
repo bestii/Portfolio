@@ -1,3 +1,4 @@
+import ReactQueryProvider from './ReactQueryProvider';
 import ThemeProvider from './ThemeProvider';
 
-export { ThemeProvider };
+export { ReactQueryProvider, ThemeProvider };
