@@ -84,7 +84,7 @@ const AboutMe: FC = async () => {
               </li>
               <li className='skill-bar'>
                 <div className='skill-bar-title'>
-                  <span>JavaScript</span>
+                  <span>TypeScript</span>
                   <span className='skill-bar-value'>95%</span>
                 </div>
                 <div className='skill-bar-bg' aria-hidden='true'>
