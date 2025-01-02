@@ -5,13 +5,13 @@
     "title": "Professional",
     "timeline_items": [
       {
-        "role": "Full Stack Developer",
-        "name": "Fraunhofer IESE (Work Student), Germany",
+        "role": "Frontend Engineer",
+        "name": "Fraunhofer IESE, Germany",
         "duration": {
           "startDate": "June 2021",
           "endDate": "Present"
         },
-        "briefText": "Involved in developing an application to automate ticket creation in JIRA for customer support tickets.",
+        "briefText": "Responsible for the development of responsive and scalable web applications, ensuring alignment with user needs and business goals.",
         "developedSkills": [
           "ReactJS",
           "Typescript",
@@ -44,7 +44,7 @@
         "name": "Technische Universität Kaiserslautern, Germany",
         "duration": {
           "startDate": "March 2020",
-          "endDate": "now"
+          "endDate": "March 2023"
         },
         "briefText": "Deepened my understanding of Computer Science in the field of Software Engineering and Intelligent Systems.",
         "developedSkills": [
