@@ -58,42 +58,22 @@ const AboutMe: FC = async () => {
           <div className='skill-bar'>
             <h3>Skills Bar</h3>
             <ul className=''>
-              <li className='skill-bar'>
-                <div className='skill-bar-title'>
-                  <span>HTML</span>
-                  <span className='skill-bar-value'>90%</span>
-                </div>
-                <div className='skill-bar-bg' aria-hidden='true'>
-                  <div
-                    className='skill-bar-amount bar-90'
-                    data-skill-bar-amount='90'
-                  ></div>
-                </div>
-              </li>
-              <li className='skill-bar'>
-                <div className='skill-bar-title'>
-                  <span>CSS</span>
-                  <span className='skill-bar-value'>80%</span>
-                </div>
-                <div className='skill-bar-bg' aria-hidden='true'>
-                  <div
-                    className='skill-bar-amount bar-80'
-                    data-skill-bar-amount='80'
-                  ></div>
-                </div>
-              </li>
-              <li className='skill-bar'>
-                <div className='skill-bar-title'>
-                  <span>JavaScript</span>
-                  <span className='skill-bar-value'>95%</span>
-                </div>
-                <div className='skill-bar-bg' aria-hidden='true'>
-                  <div
-                    className='skill-bar-amount bar-95'
-                    data-skill-bar-amount='95'
-                  ></div>
-                </div>
-              </li>
+              {aboutMe.skillBar.map(
+                (skill: { name: string; value: number }) => (
+                  <li className='skill-bar' key={skill.name}>
+                    <div className='skill-bar-title'>
+                      <span>{skill.name}</span>
+                      <span className='skill-bar-value'>{skill.value}%</span>
+                    </div>
+                    <div className='skill-bar-bg' aria-hidden='true'>
+                      <div
+                        className={`skill-bar-amount bar-${skill.value}`}
+                        data-skill-bar-amount={skill.value}
+                      ></div>
+                    </div>
+                  </li>
+                )
+              )}
             </ul>
           </div>
         </div>
