@@ -1,0 +1,41 @@
+@import "tailwindcss";
+@import "./typography";
+
+@theme {
+  --font-sans:
+    var(--font-barlow), ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.dark-mode {
+  --color: #ebf4f1;
+  --color-primary: #41b38a;
+  --color-secondary: #95a1be;
+  --bg: #091a28;
+  --bg-secondary: #071521;
+  --border-color: #0d2538;
+}
+
+.sepia-mode {
+  --color: #433422;
+  --color-secondary: #504231c7;
+  --bg: #f1e7d0;
+  --bg-secondary: #eae0c9;
+  --border-color: #ded0bf;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--color);
+  transition: background-color 0.3s;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  main {
+    flex: 1 0 auto;
+  }
+}
+
+a {
+  color: var(--color-primary);
+}
