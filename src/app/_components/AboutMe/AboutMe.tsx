@@ -1,38 +1,10 @@
 import Image from "next/image";
 //import "./AboutMe.scss";
 import { imgPortrait } from "~/app/_assets";
+import { api } from "~/trpc/server";
 
 const AboutMe = async () => {
-  const aboutMe = {
-    title: "About",
-    description:
-      "Want to know more about me? Here is the list of skills that I am good at.",
-    mainDescription1:
-      "I am an enthusiastic programmer who loves to explore new technologies and innovations. Completed my Bachelor's degree from Govt. Model Engineering College(Thrikkakara) in Computer Science & Engineering.",
-    mainDescription2:
-      "I am pursuing a Master's degree in Computer Science from Technische Universität Kaiserslautern, Germany. I enjoy learning new concepts and methodologies to develop high-performance software and connect with people of similar interests.",
-    profileImg: {
-      smallImg: "portrait.jpg",
-      largeImg: "portrait.jpg",
-    },
-    skillList1: ["Frontend Development", "SEO", "Optimization"],
-    skillList2: ["Prototyping", "Accessibility"],
-    skillBar: [
-      {
-        name: "HTML",
-        value: 90,
-      },
-      {
-        name: "CSS",
-        value: 80,
-      },
-      {
-        name: "JavaScript",
-        value: 95,
-      },
-    ],
-  };
-
+  const aboutMe = await api.portfolio.about();
   return (
     <section id="about" className="about my-10 md:my-32">
       <div className="about-header mb-10">

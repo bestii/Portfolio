@@ -2,9 +2,9 @@ import "~/styles/globals.css";
 
 import { type Metadata, type Viewport } from "next";
 import { Barlow } from "next/font/google";
+import { ToastContainer } from "react-toastify";
 import { TRPCReactProvider } from "~/trpc/react";
 import { ChangeColorMode, Footer, Header } from "./_components";
-import { ToastContainer } from "react-toastify";
 import ThemeProvider from "./_provider/ThemeProvider";
 
 const APP_NAME = "Bestin John";
@@ -64,7 +64,6 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${barlow.variable} font-sans`}>
-      <body>
         <TRPCReactProvider>
           <ThemeProvider>
             <Header />
@@ -76,7 +75,6 @@ export default function RootLayout({
             <Footer />
           </ThemeProvider>
         </TRPCReactProvider>
-      </body>
     </html>
   );
 }

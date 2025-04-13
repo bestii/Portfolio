@@ -5,13 +5,12 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { FC } from "react";
-
 //import "./Contact.scss";
+import { api } from "~/trpc/server";
 import ContactForm from "./ContactForm/ContactForm";
 
 const Contact: FC = async () => {
-  const response = {};
-  const contact = {};
+  const contact = await api.portfolio.contact();
 
   return (
     <section id="contact" className="contact mb-10">

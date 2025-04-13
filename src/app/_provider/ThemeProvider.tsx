@@ -15,7 +15,7 @@ import { ThemeContext } from "../_contexts/ThemeContext";
 const LOCAL_STORAGE_KEY = "theme-mode";
 
 const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
-  const [preference, setPreference] = useState<PreferredOptions>("");
+  const [preference, setPreference] = useState<PreferredOptions>("dark");
   const [selectedTheme, setTheme] = useLocalStorage<AppTheme>(
     LOCAL_STORAGE_KEY,
     "system",
@@ -41,7 +41,7 @@ const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
       if (theme === "system") {
         setPreference(getPreference());
       } else {
-        setPreference("");
+        setPreference("dark");
       }
       setTheme(theme);
     },

@@ -1,4 +1,5 @@
 export type Introduction = {
+  introText: string;
   name: string;
   caption: string;
   description: string;

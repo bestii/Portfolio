@@ -1,19 +1,10 @@
 import Image from "next/image";
 //import "./Introduction.scss";
 import { imgSiteBanner } from "~/app/_assets";
+import { api } from "~/trpc/server";
 
 const Introduction = async () => {
-  const experience = {
-    introText: "Hi, my name is",
-    name: "Bestin John",
-    caption: ", I'm a Frontend Web Developer.",
-    description:
-      "Motivated and goal-oriented professional with 4+ years of experience in building web pages that are scalable, maintainable, and responsive across browsers and different devices with varying screen sizes.",
-    bgImg: {
-      smallImg: "site-banner.jpg",
-      largeImg: "site-banner.jpg",
-    },
-  };
+  const experience = await api.portfolio.introduction();
 
   return (
     <section id="introduction" className="introduction mb-10">

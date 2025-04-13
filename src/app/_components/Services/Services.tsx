@@ -1,14 +1,11 @@
 import type { FC } from "react";
+import { api } from "~/trpc/server";
 
 //import "./Services.scss";
 
 const Services: FC = async () => {
-  const response = {};
-  const services = {
-    title: "",
-    description: "",
-    services: [],
-  };
+  const services = await api.portfolio.services();
+
   return (
     <section id="services" className="services mb-10">
       <div className="services-header mb-10">
