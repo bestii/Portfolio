@@ -1,0 +1,34 @@
+.contactHeaderP {
+  color: var(--color-secondary);
+}
+
+.contactDetails {
+  width: 100%;
+}
+
+.contactForm {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .contactDetails {
+    flex: 1 1 33.5%;
+  }
+
+  .contactForm {
+    flex: 1 1 66.5%;
+  }
+
+  .formName {
+    margin-right: 10%;
+  }
+
+  .formName,
+  .formEmail {
+    flex: 1 1 45%;
+  }
+}
+
+.contact-icon {
+  fill: var(--color);
+}

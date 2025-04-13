@@ -1,0 +1,29 @@
+.verticalLine {
+  background-color: var(--color-primary);
+}
+
+.timelineStartpoint {
+  background-color: var(--bg);
+  border-color: var(--color-primary);
+}
+
+.timelineItemBullet {
+  background-color: var(--color);
+  left: -1.8125rem; /* equals -7.25 in Tailwind units */
+}
+
+.organizationName {
+  color: var(--color-secondary);
+}
+
+.lineSeparator {
+  height: 1px;
+}
+
+.dashList {
+  color: var(--color-secondary);
+}
+
+.dashListDash {
+  background-color: var(--color-primary);
+}
