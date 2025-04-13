@@ -1,0 +1,22 @@
+.servicesHeaderP {
+  color: var(--color-secondary);
+}
+
+.serviceBox {
+  background-color: var(--border-color);
+  height: 100%;
+  border-radius: 0.125rem;
+}
+
+.serviceIcon svg {
+  width: 40px;
+  height: 40px;
+  fill: var(--color-primary);
+}
+
+.lineService {
+  width: 6.875rem;
+  position: relative;
+  left: -3.1875rem;
+  margin: 1rem 0;
+}

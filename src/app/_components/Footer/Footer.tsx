@@ -1,25 +1,30 @@
-import type { FC } from "react";
-
-//import "./Footer.scss";
-import SocialLinks from "../SocialLinks/SocialLinks";
 import GoToTop from "../GoToTop/GoToTop";
+import SocialLinks from "../SocialLinks/SocialLinks";
+import styles from "./Footer.module.css";
 
-const Footer: FC = () => {
+const Footer = () => {
   const copyrightYear = new Date().getFullYear();
 
   return (
-    <footer className="copyright-footer py-2 text-center text-sm sm:text-base">
+    <footer
+      className={`${styles.footerShadow} py-2 text-center text-sm sm:text-base`}
+    >
       <SocialLinks />
       <GoToTop />
       <p className="my-3">
-        {`Bestin John © Copyright ${copyrightYear}. All Rights Reserved.`}
+        Bestin John © Copyright {copyrightYear}. All Rights Reserved.
       </p>
       <p className="hidden">
         <span>
           This is a NextJS version of the design inspired from the open-source
-          project
+          project{" "}
         </span>
-        <a href="https://github.com/manussakis/leeneon">leeneon</a>
+        <a
+          href="https://github.com/manussakis/leeneon"
+          className="hover:text-primary underline transition"
+        >
+          leeneon
+        </a>
       </p>
     </footer>
   );
