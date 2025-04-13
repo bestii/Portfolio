@@ -11,7 +11,7 @@ type ThemeContextType = {
 
 export const ThemeContext = createContext<ThemeContextType>({
   selectedTheme: "system",
-  preference: "",
+  preference: "dark",
   setSelectedTheme: () => ({}),
 });
 

@@ -1,6 +1,6 @@
 {
-  "name": "t3-portfoilio",
-  "version": "0.1.0",
+  "name": "portfoilio",
+  "version": "3.0.0",
   "private": true,
   "type": "module",
   "scripts": {
