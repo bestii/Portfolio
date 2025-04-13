@@ -5,50 +5,59 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { FC } from "react";
-//import "./Contact.scss";
+
 import { api } from "~/trpc/server";
+import styles from "./Contact.module.css";
 import ContactForm from "./ContactForm/ContactForm";
 
 const Contact: FC = async () => {
   const contact = await api.portfolio.contact();
 
   return (
-    <section id="contact" className="contact mb-10">
-      <div className="contact-header mb-10">
+    <section id="contact" className="mb-10">
+      <div className="mb-10">
         <h2>{contact.title}</h2>
         <div
           className="line line-horizontal line-heading"
           aria-hidden="true"
         ></div>
-        <p className="contact-header-p">{contact.description}</p>
+        <p className={`${styles.contactHeaderP} mt-4 max-w-[17.5rem]`}>
+          {contact.description}
+        </p>
       </div>
-      <div className="flex flex-wrap">
-        <div className="contact-details">
-          <div className="contact-info mb-8 flex">
-            <div className="contact-info-icon relative top-0.5 mr-4 flex h-6 items-center">
+
+      <div className="flex flex-wrap gap-4">
+        <div className={`${styles.contactDetails} mb-8`}>
+          <div className="mb-8 flex">
+            <div className="relative top-[2px] mr-4 flex h-6 items-center">
               <FontAwesomeIcon icon={faAt} />
             </div>
-            <span className="contact-info-text">
+            <span>
               <p>
                 {contact.email}
                 <span className="hidden">null</span>.com
               </p>
             </span>
           </div>
-          <div className="contact-info mb-8 flex">
-            <div className="contact-info-icon relative top-0.5 mr-4 flex h-6 items-center">
+
+          <div className="mb-8 flex">
+            <div className="relative top-[2px] mr-4 flex h-6 items-center">
               <FontAwesomeIcon icon={faMobileScreen} />
             </div>
-            <span className="contact-info-text">{contact.mobile}</span>
+            <span>{contact.mobile}</span>
           </div>
-          <div className="contact-info mb-8 flex">
-            <div className="contact-info-icon relative top-0.5 mr-4 flex h-6 items-center">
+
+          <div className="mb-8 flex">
+            <div className="relative top-[2px] mr-4 flex h-6 items-center">
               <FontAwesomeIcon icon={faLocationDot} />
             </div>
-            <span className="contact-info-text">{contact.address}</span>
+            <span>{contact.address}</span>
           </div>
         </div>
-        <ContactForm />
+
+        <div className={`${styles.contactForm}`}>
+          <ContactForm />
+        </div>
       </div>
     </section>
   );
