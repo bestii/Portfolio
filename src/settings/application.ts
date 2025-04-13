@@ -1,5 +1,5 @@
+import type { IconProp } from "@fortawesome/fontawesome-svg-core";
 import {
-  type IconDefinition,
   faDesktop,
   faMoon,
   faMugHot,
@@ -15,9 +15,9 @@ export const appTheme = {
 
 export type AppTheme = (typeof appTheme)[keyof typeof appTheme];
 export type PreferredOptions = Extract<AppTheme, "light" | "dark">;
-export const themes = Object.keys(appTheme);
+export const themes = Object.keys(appTheme) as AppTheme[];
 
-export const ThemeToIcon: Record<string, IconDefinition> = {
+export const ThemeToIcon: Record<AppTheme, IconProp> = {
   system: faDesktop,
   light: faSun,
   dark: faMoon,

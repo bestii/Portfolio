@@ -15,7 +15,7 @@ const ThemeOptions = () => {
           className="inline-block p-1"
           key={theme}
           onClick={() => {
-            setSelectedTheme(theme as AppTheme);
+            setSelectedTheme(theme);
           }}
         >
           <FontAwesomeIcon
