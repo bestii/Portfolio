@@ -6,8 +6,8 @@ import {
   Html,
   Section,
   Text,
-} from '@react-email/components';
-import { FC } from 'react';
+} from "@react-email/components";
+import { type FC } from "react";
 
 type ContactFormEmailProps = {
   name: string;
@@ -46,32 +46,32 @@ export const ContactFormEmailTemplate: FC<ContactFormEmailProps> = ({
 export default ContactFormEmailTemplate;
 
 const mainStyle = {
-  backgroundColor: '#f9f9f9',
-  padding: '20px',
+  backgroundColor: "#f9f9f9",
+  padding: "20px",
 };
 
 const containerStyle = {
-  backgroundColor: '#ffffff',
-  padding: '20px',
-  borderRadius: '8px',
-  maxWidth: '600px',
-  margin: '0 auto',
+  backgroundColor: "#ffffff",
+  padding: "20px",
+  borderRadius: "8px",
+  maxWidth: "600px",
+  margin: "0 auto",
 };
 
 const headingStyle = {
-  color: '#333333',
-  fontSize: '24px',
-  marginBottom: '20px',
+  color: "#333333",
+  fontSize: "24px",
+  marginBottom: "20px",
 };
 
 const labelStyle = {
-  fontSize: '16px',
-  color: '#555555',
-  margin: '10px 0',
+  fontSize: "16px",
+  color: "#555555",
+  margin: "10px 0",
 };
 
 const messageStyle = {
-  fontSize: '16px',
-  color: '#333333',
-  lineHeight: '1.5',
+  fontSize: "16px",
+  color: "#333333",
+  lineHeight: "1.5",
 };

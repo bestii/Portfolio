@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
 import { Resend } from "resend";
 import ContactFormEmailTemplate from "~/app/_components/contact-form-email/ContactFormEmailTemplate";
 import type { FormSubmissionRequest } from "~/app/_types/email";

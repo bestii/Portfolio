@@ -93,11 +93,7 @@ const ContactForm = () => {
           </span>
         </div>
         <div className="form-group flex justify-end">
-          <button
-            type="submit"
-            className="button button-default"
-            disabled={isSendingMail}
-          >
+          <button type="submit" className="button button-default">
             <span className="button-text">Submit</span>
           </button>
         </div>
