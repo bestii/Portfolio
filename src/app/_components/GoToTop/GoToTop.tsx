@@ -1,42 +1,42 @@
-'use client';
+"use client";
 
-import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { type FC, useEffect, useState } from 'react';
+import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useEffect, useState } from "react";
 
-//import './GoToTop.scss';
-
-const GoToTop: FC = () => {
+const GoToTop = () => {
   const [showGoTop, setShowGoTop] = useState(false);
 
-  const handleVisibleButton = () => {
-    setShowGoTop(window.scrollY > 600);
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowGoTop(window.scrollY > 600);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleScrollUp = () => {
-    window.scrollTo({ left: 0, top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleVisibleButton);
-  }, []);
 
   return (
     <>
-      {showGoTop ? (
-        <div className='go-to-top animate-fadeIn fixed z-50 text-center'>
+      {showGoTop && (
+        <div className="animate-fadeIn fixed right-[15px] bottom-[35px] z-50 md:right-[75px] md:bottom-[20px]">
           <button
-            className='back-to-top-btn cursor-pointer rounded border px-3 py-2'
             onClick={handleScrollUp}
+            className="group rounded border border-[var(--color-primary)] bg-transparent p-3 transition hover:bg-[var(--color-primary)]"
+            aria-label="Go to top"
           >
             <FontAwesomeIcon
               icon={faArrowUp}
-              className='back-to-top-icon'
-              size='lg'
+              className="text-[var(--color-primary)] transition group-hover:text-white"
+              size="lg"
             />
           </button>
         </div>
-      ) : null}
+      )}
     </>
   );
 };

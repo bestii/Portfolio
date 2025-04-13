@@ -4,13 +4,11 @@ import {
   faMobileScreen,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import type { FC } from "react";
-
 import { api } from "~/trpc/server";
 import styles from "./Contact.module.css";
 import ContactForm from "./ContactForm/ContactForm";
 
-const Contact: FC = async () => {
+const Contact = async () => {
   const contact = await api.portfolio.contact();
 
   return (

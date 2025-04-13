@@ -1,38 +1,25 @@
-import type { FC } from 'react';
-
-//import './Header.scss';
-
-const Header: FC = () => {
+const Header = () => {
   return (
-    <header className='header'>
-      <nav className='nav-bar fixed top-0 z-40 w-full px-2 py-5 shadow-xl'>
-        <div className='flex justify-between'>
-          <div className='flex'>
-            <div className='logo-container'>
-              {/* Link to home */}
-              <span className='font-bold'>Bestin John</span>
-            </div>
-          </div>
-          <div className='flex align-middle'>
-            <ol className='flex list-none justify-between'>
-              <li className='mx-2'>
-                <a className='cursor-pointer p-2'>About</a>
+    <header className="header">
+      <nav className="nav-bar fixed top-0 z-40 w-full bg-[var(--bg)] px-4 py-5 shadow-xl">
+        <div className="mx-auto flex max-w-screen-xl items-center justify-between">
+          <div className="logo-container text-lg font-bold">Bestin John</div>
+          <ul className="flex space-x-4">
+            {["About", "Experience", "Services", "Contact"].map((item) => (
+              <li key={item}>
+                <a
+                  href={`#${item.toLowerCase()}`}
+                  className="hover:text-primary cursor-pointer p-2 transition-colors duration-200"
+                >
+                  {item}
+                </a>
               </li>
-              <li className='mx-2'>
-                <a className='cursor-pointer p-2'>Experience</a>
-              </li>
-              <li className='mx-2'>
-                <a className='cursor-pointer p-2'>Services</a>
-              </li>
-              <li className='mx-2'>
-                <a className='cursor-pointer p-2'>Contact</a>
-              </li>
-            </ol>
-          </div>
-          <div className='hidden'></div>
+            ))}
+          </ul>
         </div>
       </nav>
-      <div className='empty-space'></div>
+      {/* Spacer to push content below fixed navbar */}
+      <div className="h-[65px]"></div>
     </header>
   );
 };
