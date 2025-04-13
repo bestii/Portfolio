@@ -1,0 +1,11 @@
+{
+  "name": "Bestin John",
+  "short_name": "PWA App",
+  "lang": "en",
+  "icons": [],
+  "theme_color": "#091a28",
+  "background_color": "#FFFFFF",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait"
+}

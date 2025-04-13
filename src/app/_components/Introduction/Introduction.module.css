@@ -1,0 +1,17 @@
+.introContent {
+  flex: 1 1 100%;
+}
+
+.introImg {
+  flex: 1 1 100%;
+}
+
+@media (min-width: 768px) {
+  .introContent {
+    flex: 1 1 42%;
+  }
+
+  .introImg {
+    flex: 1 1 58%;
+  }
+}
