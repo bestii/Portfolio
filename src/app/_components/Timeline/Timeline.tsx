@@ -1,5 +1,5 @@
 import { type FC } from "react";
-//import './Timeline.scss';
+import styles from "./Timeline.module.css";
 
 type TimelineProps = {
   timeline: {
@@ -19,30 +19,41 @@ type TimelineProps = {
 
 const Timeline: FC<TimelineProps> = ({ timeline }) => {
   return (
-    <div className="timeline-container">
-      <div className="timeline relative mt-8 max-w-sm pl-6">
-        <span className="vertical-line absolute top-0 -bottom-7 left-0"></span>
-        <h3 className="timeline-title text-2xl font-bold">{timeline.title}</h3>
+    <div className="timeline-container md:flex-[1_1_40%]">
+      <div className="relative mt-8 max-w-sm pl-6">
+        <span
+          className={`absolute top-0 -bottom-7 left-0 w-[2px] ${styles.verticalLine}`}
+        />
+        <h3 className="text-2xl font-bold">{timeline.title}</h3>
+
         {timeline.timeline_items.map((item) => (
-          <div className="timeline-item relative mb-5" key={item.name}>
+          <div className="relative mb-5" key={item.name}>
             <h4 className="text-xl font-bold">{item.role}</h4>
-            <span className="timeline-item-bullet absolute top-1.5 h-3 w-3 rounded-full"></span>
-            <span className="timeline-item-date flex items-center">
-              <span className="uppercase">{item.duration.startDate}</span>
-              <span className="line line-horizontal line-separator"></span>
-              <span className="uppercase">{item.duration.endDate}</span>
+            <span
+              className={`absolute top-1.5 h-3 w-3 rounded-full ${styles.timelineItemBullet}`}
+            ></span>
+            <span className="flex items-center text-sm uppercase">
+              <span>{item.duration.startDate}</span>
+              <span
+                className={`mx-2 inline-block w-5 ${styles.lineSeparator}`}
+              ></span>
+              <span>{item.duration.endDate}</span>
             </span>
-            <span className="organization-name">{item.name}</span>
+            <span
+              className={`block text-sm font-semibold ${styles.organizationName}`}
+            >
+              {item.name}
+            </span>
             <p className="my-5">{item.briefText}</p>
             <p className="mb-2 font-semibold">Developed skills</p>
-            <ul className="dash-list m-0 p-0 font-mono">
+            <ul className={`m-0 p-0 font-mono text-sm ${styles.dashList}`}>
               {item.developedSkills.map((skill) => (
                 <li
-                  className="dash-list-item relative mb-4 inline-block pr-3 pl-7"
+                  className="relative mb-4 inline-block pr-3 pl-7"
                   key={skill}
                 >
                   <span
-                    className="dash-list-dash absolute left-0 w-5"
+                    className={`absolute top-2.5 left-0 h-[2px] w-5 ${styles.dashListDash}`}
                     aria-hidden="true"
                   ></span>
                   {skill}
@@ -51,7 +62,10 @@ const Timeline: FC<TimelineProps> = ({ timeline }) => {
             </ul>
           </div>
         ))}
-        <span className="timeline-startpoint absolute -bottom-7 -left-1.5 h-3.5 w-3.5 rounded-full border-2 border-solid"></span>
+
+        <span
+          className={`absolute -bottom-7 -left-1.5 h-3.5 w-3.5 rounded-full border-2 border-solid ${styles.timelineStartpoint}`}
+        ></span>
       </div>
     </div>
   );

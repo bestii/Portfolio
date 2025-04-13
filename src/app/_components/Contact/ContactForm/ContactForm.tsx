@@ -2,11 +2,11 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+//import { useSendEmail } from "~/app/_hooks/email/useSendEmail";
 import { contactFormSchema, type ContactFormValues } from "./contactFormSchema";
-import { useSendEmail } from "~/app/_hooks/email/useSendEmail";
 
 const ContactForm = () => {
-  const { sendMail, isSendingMail } = useSendEmail();
+  //const { sendMail, isSendingMail } = useSendEmail();
   const {
     register,
     handleSubmit,
@@ -18,7 +18,7 @@ const ContactForm = () => {
   });
 
   const onSubmit = (data: ContactFormValues) => {
-    sendMail(data);
+    console.log(data);
     reset();
   };
   return (
