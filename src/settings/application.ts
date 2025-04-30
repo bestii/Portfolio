@@ -1,10 +1,4 @@
-import type { IconProp } from "@fortawesome/fontawesome-svg-core";
-import {
-  faDesktop,
-  faMoon,
-  faMugHot,
-  faSun,
-} from "@fortawesome/free-solid-svg-icons";
+import { Coffee, Monitor, Moon, Sun, type LucideIcon } from "lucide-react";
 
 export const appTheme = {
   system: "system",
@@ -17,9 +11,9 @@ export type AppTheme = (typeof appTheme)[keyof typeof appTheme];
 export type PreferredOptions = Extract<AppTheme, "light" | "dark">;
 export const themes = Object.keys(appTheme) as AppTheme[];
 
-export const ThemeToIcon: Record<AppTheme, IconProp> = {
-  system: faDesktop,
-  light: faSun,
-  dark: faMoon,
-  sepia: faMugHot,
+export const ThemeToIcon: Record<AppTheme, LucideIcon> = {
+  system: Monitor,
+  light: Sun,
+  dark: Moon,
+  sepia: Coffee,
 };

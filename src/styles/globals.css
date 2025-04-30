@@ -1,10 +1,19 @@
 @import "tailwindcss";
-@import "./typography";
+@import "./typography.css";
 
 @theme {
   --font-sans:
     var(--font-barlow), ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+:root {
+  --color: #243746;
+  --color-primary: #158876;
+  --color-secondary: #0e22339e;
+  --bg: #f3f5f4;
+  --bg-secondary: #fff;
+  --border-color: #ddd;
 }
 
 .dark-mode {
