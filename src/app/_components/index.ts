@@ -4,7 +4,7 @@ import Contact from "./Contact/Contact";
 import ContactFormEmailTemplate from "./Emails/ContactFormEmailTemplate";
 import Experience from "./Experience/Experience";
 import Footer from "./Footer/Footer";
-import GoToTop from "./GoToTop/GoToTop";
+import GoToTop from "./go-to-top/GoToTop";
 import Header from "./Header/Header";
 import Introduction from "./Introduction/Introduction";
 import Services from "./Services/Services";
