@@ -1,4 +1,4 @@
-import GoToTop from "../GoToTop/GoToTop";
+import GoToTop from "../go-to-top/GoToTop";
 import SocialLinks from "../SocialLinks/SocialLinks";
 import styles from "./Footer.module.css";
 
