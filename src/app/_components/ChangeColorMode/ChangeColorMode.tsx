@@ -18,7 +18,7 @@ const ChangeColorMode: FC = () => {
       className={`fixed top-1/4 right-0 z-20 flex items-start transition-transform duration-200 ease-in-out ${styles.settingsMenu} ${isOpen ? styles.open : ""}`}
     >
       <button
-        className={`${styles.settingsToggle} z-10 select-none`}
+        className={`${styles.settingsToggle} z-10 cursor-pointer select-none`}
         aria-label="Toggle theme options"
         aria-expanded={isOpen}
         aria-controls="settings"
@@ -26,7 +26,6 @@ const ChangeColorMode: FC = () => {
       >
         <FontAwesomeIcon icon={faGear} />
       </button>
-
       <div
         id="settings"
         className={`${styles.settingsMenuOptions} min-h-[150px] w-60 p-4`}
