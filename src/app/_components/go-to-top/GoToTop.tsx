@@ -24,10 +24,10 @@ const GoToTop = () => {
       {showGoTop && (
         <button
           onClick={handleScrollUp}
-          className="group animate-fadeIn fixed right-[15px] bottom-[35px] z-50 cursor-pointer rounded border border-[var(--color-primary)] bg-transparent p-2 transition hover:bg-[var(--color-primary)] md:right-[75px] md:bottom-[20px]"
+          className="group fixed right-[15px] bottom-[35px] z-50 cursor-pointer rounded border border-[var(--color-primary)] p-2 hover:bg-[var(--color-primary)] md:right-[75px] md:bottom-[20px]"
           aria-label="Go to top"
         >
-          <ArrowUpToLine className="text-[var(--color-primary)] transition group-hover:text-white" />
+          <ArrowUpToLine className="text-[var(--color-primary)] group-hover:text-white" />
         </button>
       )}
     </>
