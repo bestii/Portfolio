@@ -16,10 +16,6 @@
   border-bottom-left-radius: 0.25rem;
 }
 
-.settingsToggle svg {
-  fill: var(--color);
-}
-
 .settingsMenuOptions {
   background-color: var(--border-color);
 }

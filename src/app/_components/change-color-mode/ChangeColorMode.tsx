@@ -1,7 +1,6 @@
 "use client";
 
-import { faGear } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Settings } from "lucide-react";
 import { useState, type FC } from "react";
 import { useThemeContext } from "~/app/_contexts/ThemeContext";
 import styles from "./ChangeColorMode.module.css";
@@ -24,7 +23,8 @@ const ChangeColorMode: FC = () => {
         aria-controls="settings"
         onClick={toggleSettings}
       >
-        <FontAwesomeIcon icon={faGear} />
+        {/* <FontAwesomeIcon icon={faGear} /> */}
+        <Settings height={20} />
       </button>
       <div
         id="settings"
