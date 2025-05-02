@@ -1,5 +1,5 @@
 import GoToTop from "../go-to-top/GoToTop";
-import SocialLinks from "../SocialLinks/SocialLinks";
+import SocialLinks from "../social-links/SocialLinks";
 import styles from "./Footer.module.css";
 
 const Footer = () => {
