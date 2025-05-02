@@ -8,7 +8,7 @@ import GoToTop from "./go-to-top/GoToTop";
 import Header from "./Header/Header";
 import Introduction from "./Introduction/Introduction";
 import Services from "./Services/Services";
-import SocialLinks from "./SocialLinks/SocialLinks";
+import SocialLinks from "./social-links/SocialLinks";
 import Timeline from "./Timeline/Timeline";
 
 export {

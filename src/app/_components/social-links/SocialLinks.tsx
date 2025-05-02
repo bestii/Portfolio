@@ -41,7 +41,7 @@ const SocialLinks = () => {
     <div className="fixed right-3.5 bottom-0 mb-5 hidden flex-col items-center justify-center pb-24 md:flex">
       {/* Optional YouTube link placeholder (invisible) */}
       <a
-        className="invisible mb-1 flex h-11 w-11 items-center justify-center rounded-full"
+        className="invisible mb-1 flex h-10 w-10 items-center justify-center rounded-full"
         href="https://www.youtube.com/channel/UCAQ_qW6iR2BojA25aDwZ7ow"
         aria-label="Youtube"
         target="_blank"
@@ -51,7 +51,7 @@ const SocialLinks = () => {
       {socials.map(({ href, label, icon }) => (
         <a
           key={label}
-          className={`mb-1 flex h-11 w-11 items-center justify-center rounded-full transition-colors duration-300 hover:bg-[var(--color-primary)] ${styles.socialLink}`}
+          className={`mb-1 flex h-10 w-10 items-center justify-center rounded-full transition-colors duration-300 hover:bg-[var(--color-primary)] ${styles.socialLink}`}
           href={href}
           aria-label={label}
           target="_blank"
@@ -59,7 +59,8 @@ const SocialLinks = () => {
         >
           <FontAwesomeIcon
             icon={icon}
-            className={`text-xl ${styles.socialIcon}`}
+            className={`${styles.socialIcon}`}
+            height={18}
           />
         </a>
       ))}

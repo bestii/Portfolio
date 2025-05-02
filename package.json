@@ -1,6 +1,6 @@
 {
   "name": "portfoilio",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "private": true,
   "type": "module",
   "scripts": {
@@ -24,11 +24,11 @@
     "@hookform/resolvers": "^3.9.1",
     "@react-email/components": "0.0.37",
     "@t3-oss/env-nextjs": "^0.13.4",
-    "@tanstack/react-query": "^5.74.11",
+    "@tanstack/react-query": "^5.75.0",
     "@trpc/client": "^11.1.2",
     "@trpc/react-query": "^11.1.2",
     "@trpc/server": "^11.1.2",
-    "lucide-react": "^0.503.0",
+    "lucide-react": "^0.506.0",
     "next": "^15.3.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
