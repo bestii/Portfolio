@@ -46,7 +46,7 @@ const SocialLinks = () => {
         aria-label="Youtube"
         target="_blank"
         rel="noopener noreferrer"
-      ></a>
+      />
 
       {socials.map(({ href, label, icon }) => (
         <a
@@ -68,7 +68,7 @@ const SocialLinks = () => {
       <span
         className={`absolute bottom-0 left-2/4 h-20 w-[2px] bg-[var(--color-primary)]`}
         aria-hidden="true"
-      ></span>
+      />
     </div>
   );
 };
