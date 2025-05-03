@@ -33,7 +33,7 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-hook-form": "^7.56.1",
-    "react-toastify": "^10.0.6",
+    "react-toastify": "^11.0.0",
     "resend": "^4.4.1",
     "server-only": "^0.0.1",
     "superjson": "^2.2.2",
