@@ -22,7 +22,7 @@ const Contact = async () => {
       <div className="flex flex-wrap gap-4">
         <div className={`${styles.contactDetails} mb-8`}>
           <div className="mb-8 flex">
-            <div className="relative top-[2px] mr-2 flex h-6 items-center font-bold">
+            <div className="relative top-[2px] mr-4 flex h-6 items-center font-bold">
               <AtSign height={18} strokeWidth={2.5} />
             </div>
             <span>
