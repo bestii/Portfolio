@@ -1,4 +1,5 @@
 import { AtSign, MapPin, PhoneOutgoing } from "lucide-react";
+import { SectionHeader } from "~/app/_components";
 import { api } from "~/trpc/server";
 import styles from "./Contact.module.css";
 import ContactForm from "./ContactForm/ContactForm";
@@ -8,16 +9,11 @@ const Contact = async () => {
 
   return (
     <section id="contact" className="mb-10">
-      <div className="mb-10">
-        <h2>{contact.title}</h2>
-        <div
-          className="line line-horizontal line-heading"
-          aria-hidden="true"
-        ></div>
-        <p className={`${styles.contactHeaderP} mt-4 max-w-[17.5rem]`}>
-          {contact.description}
-        </p>
-      </div>
+      <SectionHeader
+        title={contact.title}
+        description={contact.description}
+        className={styles.contactHeaderP}
+      />
 
       <div className="flex flex-wrap gap-4">
         <div className={`${styles.contactDetails} mb-8`}>

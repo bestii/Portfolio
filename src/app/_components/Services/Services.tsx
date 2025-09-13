@@ -1,4 +1,5 @@
 import type { FC } from "react";
+import { SectionHeader } from "~/app/_components";
 import { api } from "~/trpc/server";
 import styles from "./Services.module.css";
 
@@ -7,18 +8,11 @@ const Services: FC = async () => {
 
   return (
     <section id="services" className="mb-10">
-      <div className="mb-10">
-        <h2>{services.title}</h2>
-        <div
-          className="line line-horizontal line-heading"
-          aria-hidden="true"
-        ></div>
-        <p
-          className={`${styles.servicesHeaderP} mt-4 max-w-[17.5rem] text-base`}
-        >
-          {services.description}
-        </p>
-      </div>
+      <SectionHeader
+        title={services.title}
+        description={services.description}
+        className={styles.servicesHeaderP}
+      />
 
       <ul className="flex flex-wrap gap-y-10">
         {services.services.map((service) => (

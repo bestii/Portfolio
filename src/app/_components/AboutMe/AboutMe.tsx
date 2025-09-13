@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { imgPortrait } from "~/app/_assets";
+import { SectionHeader } from "~/app/_components";
 import { api } from "~/trpc/server";
 
 const AboutMe = async () => {
@@ -7,16 +8,11 @@ const AboutMe = async () => {
 
   return (
     <section id="about" className="my-10 md:my-32">
-      <div className="mb-10">
-        <h2 className="text-2xl font-semibold">{aboutMe.title}</h2>
-        <div
-          className="my-2 h-1 w-12 bg-[var(--color-primary)]"
-          aria-hidden="true"
-        />
-        <p className="max-w-[17.5rem] text-base text-[var(--color-secondary)]">
-          {aboutMe.description}
-        </p>
-      </div>
+      <SectionHeader
+        title={aboutMe.title}
+        description={aboutMe.description}
+        className="text-[var(--color-secondary)]"
+      />
       <div className="flex flex-wrap">
         <div className="relative mb-20 w-full md:mr-[5%] md:mb-0 md:w-[45%]">
           <div className="absolute top-15 bottom-[-3.75rem] left-0 w-[80%] bg-[var(--border-color)]" />
