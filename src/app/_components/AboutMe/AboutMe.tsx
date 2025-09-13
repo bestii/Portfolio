@@ -10,10 +10,10 @@ const AboutMe = async () => {
       <div className="mb-10">
         <h2 className="text-2xl font-semibold">{aboutMe.title}</h2>
         <div
-          className="mx-auto my-2 h-1 w-12 bg-[var(--color-primary)]"
+          className="my-2 h-1 w-12 bg-[var(--color-primary)]"
           aria-hidden="true"
         />
-        <p className="mx-auto max-w-[17.5rem] text-base text-[var(--color-secondary)]">
+        <p className="max-w-[17.5rem] text-base text-[var(--color-secondary)]">
           {aboutMe.description}
         </p>
       </div>
