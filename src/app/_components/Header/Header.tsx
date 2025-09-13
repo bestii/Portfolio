@@ -10,6 +10,7 @@ const Header = () => {
             <Image
               src={imgLogo}
               alt="Bestin John Logo"
+              width={35}
               height={35}
               className="w-auto"
             />
