@@ -7,6 +7,7 @@ import Footer from "./Footer/Footer";
 import GoToTop from "./go-to-top/GoToTop";
 import Header from "./Header/Header";
 import Introduction from "./Introduction/Introduction";
+import Logo from "./Logo/Logo";
 import SectionHeader from "./SectionHeader/SectionHeader";
 import Services from "./Services/Services";
 import SocialLinks from "./social-links/SocialLinks";
@@ -22,6 +23,7 @@ export {
   GoToTop,
   Header,
   Introduction,
+  Logo,
   SectionHeader,
   Services,
   SocialLinks,
