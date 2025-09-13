@@ -1,7 +1,30 @@
+"use client";
+
 import Image from "next/image";
 import { imgLogo } from "~/app/_assets";
 
 const Header = () => {
+  // Handle smooth scroll when clicking on navigation links
+  const handleSmoothScroll = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    id: string,
+  ) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      // Get the height of the navbar to offset the scroll position
+      const navbarHeight = 65;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition =
+        elementPosition + window.pageYOffset - navbarHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <header className="header">
       <nav className="nav-bar fixed top-0 z-40 w-full bg-[var(--bg)] px-4 py-2 shadow-xl">
@@ -20,7 +43,8 @@ const Header = () => {
               <li key={item}>
                 <a
                   href={`#${item.toLowerCase()}`}
-                  className="hover:text-primary cursor-pointer p-2 transition-colors duration-200"
+                  className="cursor-pointer p-2 transition-colors duration-200 hover:text-[var(--color-primary)]"
+                  onClick={(e) => handleSmoothScroll(e, item.toLowerCase())}
                 >
                   {item}
                 </a>
