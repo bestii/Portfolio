@@ -15,7 +15,7 @@ const SectionHeader: FC<SectionHeaderProps> = ({
 }) => {
   return (
     <div className={`mb-10 ${className}`}>
-      <h2 className="text-white">{title}</h2>
+      <h2 className="text-[var(--color)]">{title}</h2>
       <div
         className="line line-horizontal line-heading"
         aria-hidden="true"
