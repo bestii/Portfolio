@@ -1,8 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useState } from "react";
-import { imgLogo } from "~/app/_assets";
+import Logo from "../Logo/Logo";
 
 const Header = () => {
   const [activeSection, setActiveSection] = useState<string>("");
@@ -86,15 +85,7 @@ const Header = () => {
     <header className="header">
       <nav className="nav-bar fixed top-0 z-40 w-full bg-[var(--bg)] px-4 py-2 shadow-xl">
         <div className="mx-auto flex max-w-screen-xl items-center justify-between">
-          <div className="logo-container">
-            <Image
-              src={imgLogo}
-              alt="Bestin John Logo"
-              width={35}
-              height={35}
-              className="w-auto"
-            />
-          </div>
+          <Logo />
           <ul className="flex space-x-4">
             {["About", "Experience", "Services", "Contact"].map((item) => {
               const sectionId = item.toLowerCase();
