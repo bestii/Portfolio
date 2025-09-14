@@ -25,12 +25,12 @@ const Logo = ({
     // Determine which logo to show based on theme
     const theme = selectedTheme === "system" ? preference : selectedTheme;
 
-    if (theme === "dark") {
-      setLogoSrc(logoDark); // Light colored logo for dark backgrounds
+    if (theme === "light") {
+      setLogoSrc(logoLight); // Light colored logo for dark backgrounds
     } else if (theme === "sepia") {
       setLogoSrc(logoSepia); // Sepia-optimized logo
     } else {
-      setLogoSrc(logoLight); // Dark colored logo for light backgrounds
+      setLogoSrc(logoDark); // Dark colored logo for light backgrounds
     }
   }, [selectedTheme, preference]);
 
