@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { logoDark } from "~/app/_assets";
+import { logoDark, logoLight, logoSepia } from "~/app/_assets";
 import { useThemeContext } from "~/app/_contexts/ThemeContext";
 
 interface LogoProps {
@@ -28,9 +28,9 @@ const Logo = ({
     if (theme === "dark") {
       setLogoSrc(logoDark); // Light colored logo for dark backgrounds
     } else if (theme === "sepia") {
-      setLogoSrc(logoDark); // Sepia-optimized logo
+      setLogoSrc(logoSepia); // Sepia-optimized logo
     } else {
-      setLogoSrc(logoDark); // Dark colored logo for light backgrounds
+      setLogoSrc(logoLight); // Dark colored logo for light backgrounds
     }
   }, [selectedTheme, preference]);
 
