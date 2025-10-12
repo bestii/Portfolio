@@ -51,25 +51,23 @@ const AboutMe = async () => {
           <div>
             <h3 className="mb-4 text-lg font-semibold">Skills Bar</h3>
             <ul>
-              {aboutMe.skillBar.map(
-                ({ name, value }: { name: string; value: number }) => (
-                  <li key={name} className="mb-4">
-                    <div className="mb-1 flex justify-between text-sm">
-                      <span>{name}</span>
-                      <span className="text-[var(--color-secondary)]">
-                        {value}%
-                      </span>
-                    </div>
-                    <div className="h-1.5 w-full overflow-hidden rounded-full bg-[#1d263d]">
-                      <div
-                        className="h-full rounded-full bg-[var(--color-primary)] transition-all"
-                        style={{ width: `${value}%` }}
-                        data-skill-bar-amount={value}
-                      ></div>
-                    </div>
-                  </li>
-                ),
-              )}
+              {aboutMe.skillBar.map(({ name, value }) => (
+                <li key={name} className="mb-4">
+                  <div className="mb-1 flex justify-between text-sm">
+                    <span>{name}</span>
+                    <span className="text-[var(--color-secondary)]">
+                      {value}%
+                    </span>
+                  </div>
+                  <div className="h-1.5 w-full overflow-hidden rounded-full bg-[#1d263d]">
+                    <div
+                      className="h-full rounded-full bg-[var(--color-primary)] transition-all"
+                      style={{ width: `${value}%` }}
+                      data-skill-bar-amount={value}
+                    ></div>
+                  </div>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
