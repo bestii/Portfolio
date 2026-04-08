@@ -1,19 +1,8 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended",
-    ":rebaseStalePrs"
-  ],
+  "extends": ["config:recommended", ":rebaseStalePrs"],
   "useBaseBranchConfig": "merge",
-  "baseBranches": [
-    "/^release\\/.*/"
-  ],
-  "assignees": [
-    "bestii",
-    "bestin.john"
-  ],
-  "reviewers": [
-    "bestii",
-    "bestin.john"
-  ]
+  "baseBranchPatterns": ["/^release\\/.*/"],
+  "assignees": ["bestii", "bestin.john"],
+  "reviewers": ["bestii", "bestin.john"]
 }
