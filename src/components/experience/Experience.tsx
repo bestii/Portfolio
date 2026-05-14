@@ -63,7 +63,6 @@ const Experience = () => {
       id="experience"
       sectionNumber="02"
       heading="Where I’ve Worked"
-      eyebrow="Experience"
       items={experienceItems}
     />
   );

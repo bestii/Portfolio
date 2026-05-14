@@ -50,7 +50,6 @@ const Education = () => {
       id="education"
       sectionNumber="03"
       heading="Where I Studied"
-      eyebrow="Education"
       items={educationItems}
     />
   );

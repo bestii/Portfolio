@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-import Reveal from "@/components/animations/Reveal";
 import portraitImage from "@/assets/images/portrait.jpg";
+import Reveal from "@/components/animations/Reveal";
 
 const technologies = [
   "JavaScript",
@@ -14,7 +14,7 @@ const technologies = [
 
 const AboutMe = () => {
   return (
-    <section id="about" className="py-24">
+    <section id="about" className="py-24 max-w-225 mx-auto">
       <div className="grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(320px,420px)] lg:items-start">
         <div>
           <Reveal

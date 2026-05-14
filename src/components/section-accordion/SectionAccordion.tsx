@@ -16,7 +16,6 @@ type AccordionItem = {
 type SectionAccordionProps = {
   sectionNumber: string;
   heading: string;
-  eyebrow: string;
   id: string;
   items: AccordionItem[];
 };
@@ -24,7 +23,6 @@ type SectionAccordionProps = {
 const SectionAccordion = ({
   sectionNumber,
   heading,
-  eyebrow,
   id,
   items,
 }: SectionAccordionProps) => {
@@ -32,7 +30,7 @@ const SectionAccordion = ({
   const activeItem = items[activeIndex] ?? items[0];
 
   return (
-    <section id={id} className="py-24">
+    <section id={id} className="py-24 max-w-175 mx-auto">
       <Reveal
         as="div"
         delay={60}
@@ -82,39 +80,23 @@ const SectionAccordion = ({
           id={`${id}-panel`}
           role="tabpanel"
           aria-labelledby={`${id}-tab-${activeIndex}`}
-          className="rounded-2xl border border-white/10 bg-(--color-bg-secondary) p-6 shadow-2xl shadow-black/10 md:p-8"
         >
-          <p className="font-mono text-sm uppercase tracking-[0.24em] text-(--color-accent)">
-            {eyebrow}
-          </p>
-
-          <div className="mt-4 flex flex-col gap-2 md:flex-row md:items-baseline md:justify-between">
-            <div>
-              <h3 className="text-2xl font-semibold text-(--color-text-primary)">
-                {activeItem.title}
-              </h3>
-              <p className="mt-1 text-base text-(--color-text-secondary)">
-                {activeItem.location}
-              </p>
-            </div>
-
+          <div>
+            <h3 className="text-xl font-medium text-(--color-text-primary) mb-2">
+              {activeItem.title}
+            </h3>
             <p className="font-mono text-sm text-(--color-text-muted)">
               {activeItem.timeframe}
             </p>
+            <ul className="mt-6 space-y-4 text-base leading-8 text-(--color-text-muted)">
+              {activeItem.bullets.map((bullet) => (
+                <li key={bullet} className="flex gap-3">
+                  <span className="font-mono text-(--color-accent)">▹</span>
+                  <span>{bullet}</span>
+                </li>
+              ))}
+            </ul>
           </div>
-
-          <p className="mt-6 text-base leading-8 text-(--color-text-muted) md:text-lg">
-            {activeItem.summary}
-          </p>
-
-          <ul className="mt-6 space-y-4 text-base leading-8 text-(--color-text-muted)">
-            {activeItem.bullets.map((bullet) => (
-              <li key={bullet} className="flex gap-3">
-                <span className="font-mono text-(--color-accent)">▹</span>
-                <span>{bullet}</span>
-              </li>
-            ))}
-          </ul>
         </Reveal>
       </div>
     </section>
