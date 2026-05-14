@@ -4,6 +4,7 @@ import Education from "@/components/education/Education";
 import Experience from "@/components/experience/Experience";
 import Footer from "@/components/footer/Footer";
 import Introduction from "@/components/introduction/Introduction";
+import Skills from "@/components/skills/Skills";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
         <AboutMe />
         <Experience />
         <Education />
+        <Skills />
         <Contact />
         <Footer />
       </div>
