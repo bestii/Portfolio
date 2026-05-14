@@ -1,62 +1,31 @@
 {
-  "name": "portfoilio",
-  "version": "3.0.3",
+  "name": "portfolio-bestinjohn",
+  "version": "0.1.0",
   "private": true,
-  "type": "module",
   "scripts": {
+    "dev": "next dev",
     "build": "next build",
-    "check": "next lint && tsc --noEmit",
-    "dev": "next dev --turbo",
-    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",
-    "format:write": "prettier --write \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",
-    "lint": "next lint",
-    "lint:fix": "next lint --fix",
-    "preview": "next build && next start",
     "start": "next start",
-    "typecheck": "tsc --noEmit"
+    "lint": "eslint"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^7.0.1",
-    "@fortawesome/free-brands-svg-icons": "^7.0.1",
-    "@fortawesome/free-regular-svg-icons": "^7.0.1",
-    "@fortawesome/free-solid-svg-icons": "^7.0.1",
-    "@fortawesome/react-fontawesome": "^3.0.2",
-    "@hookform/resolvers": "^5.2.1",
-    "@react-email/components": "0.5.3",
-    "@t3-oss/env-nextjs": "^0.13.8",
-    "@tanstack/react-query": "^5.87.4",
-    "@trpc/client": "^11.5.1",
-    "@trpc/react-query": "^11.5.1",
-    "@trpc/server": "^11.5.1",
-    "lucide-react": "^0.544.0",
-    "next": "^15.5.3",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
-    "react-hook-form": "^7.62.0",
-    "react-toastify": "^11.0.5",
-    "resend": "^6.0.3",
-    "server-only": "^0.0.1",
-    "superjson": "^2.2.2",
-    "usehooks-ts": "^3.1.1",
-    "zod": "^4.1.8"
+    "@fortawesome/free-brands-svg-icons": "^7.2.0",
+    "@fortawesome/react-fontawesome": "^3.3.1",
+    "@headlessui/react": "^2.2.10",
+    "framer-motion": "^12.38.0",
+    "lucide-react": "^1.15.0",
+    "next": "16.2.6",
+    "react": "19.2.6",
+    "react-dom": "19.2.6"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.3.1",
-    "@tailwindcss/postcss": "^4.1.13",
-    "@types/node": "^24.3.3",
-    "@types/react": "^19.1.13",
-    "@types/react-dom": "^19.1.9",
-    "eslint": "^9.35.0",
-    "eslint-config-next": "^15.5.3",
-    "postcss": "^8.5.6",
-    "prettier": "^3.6.2",
-    "prettier-plugin-tailwindcss": "^0.6.14",
-    "tailwindcss": "^4.1.13",
-    "typescript": "^5.9.2",
-    "typescript-eslint": "^8.43.0"
-  },
-  "ct3aMetadata": {
-    "initVersion": "7.39.3"
-  },
-  "packageManager": "pnpm@10.16.1"
+    "@tailwindcss/postcss": "^4.3.0",
+    "@types/node": "^25.7.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.6",
+    "tailwindcss": "^4.3.0",
+    "typescript": "^6.0.3"
+  }
 }

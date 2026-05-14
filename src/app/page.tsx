@@ -1,24 +1,23 @@
-import { HydrateClient } from "~/trpc/server";
-import {
-  AboutMe,
-  Contact,
-  Experience,
-  Introduction,
-  Services,
-} from "./_components";
+import AboutMe from "@/components/about-me/AboutMe";
+import Contact from "@/components/contact/Contact";
+import Education from "@/components/education/Education";
+import Experience from "@/components/experience/Experience";
+import Footer from "@/components/footer/Footer";
+import Introduction from "@/components/introduction/Introduction";
 
-export default async function Home() {
+const Home = () => {
   return (
-    <HydrateClient>
-      <main>
-        <Introduction />
-        <div className="container">
-          <AboutMe />
-          <Experience />
-          <Services />
-          <Contact />
-        </div>
-      </main>
-    </HydrateClient>
+    <main>
+      <Introduction />
+      <div className="container mx-auto px-4">
+        <AboutMe />
+        <Experience />
+        <Education />
+        <Contact />
+        <Footer />
+      </div>
+    </main>
   );
-}
+};
+
+export default Home;

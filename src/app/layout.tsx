@@ -1,11 +1,19 @@
-import "~/styles/globals.css";
+import type { Metadata } from "next";
+import { Inter, Roboto_Mono } from "next/font/google";
+import "./globals.css";
+import Header from "@/components/header/Header";
+import ThemeProvider from "@/providers/theme/ThemeProvider";
+import NetworkingLinks from "@/components/networking-links/NetworkingLinks";
 
-import { type Metadata, type Viewport } from "next";
-import { Barlow } from "next/font/google";
-import { ToastContainer } from "react-toastify";
-import { TRPCReactProvider } from "~/trpc/react";
-import { ChangeColorMode, Footer, Header } from "./_components";
-import ThemeProvider from "./_provider/ThemeProvider";
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
+
+const robotoMono = Roboto_Mono({
+  subsets: ["latin"],
+  variable: "--font-roboto-mono",
+});
 
 const APP_NAME = "Bestin John";
 const APP_DEFAULT_TITLE = "Bestin John Portfolio";
@@ -19,7 +27,10 @@ export const metadata: Metadata = {
   keywords:
     "Bestin John, Portfolio, Developer, HTML, CSS, JS, JQuery VueJS, NuxtJS, KnockoutJS, ReactJS, VueJS, Btech, CS, Computer Science, eCommerce, Web, Frontend, Bootstrap, experience, skills, computer science, engineering, developed skills,technische universität, kaiserslautern",
   applicationName: APP_NAME,
-  manifest: "/manifest.json",
+  icons: {
+    icon: "/favicon.ico",
+  },
+  // manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
@@ -47,34 +58,30 @@ export const metadata: Metadata = {
   },
 };
 
-const barlow = Barlow({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  style: ["normal"],
-  display: "swap",
-  variable: "--font-barlow",
-});
-
-export const viewport: Viewport = {
-  themeColor: "#FFFFFF",
-};
-
 export default function RootLayout({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <html lang="en" className={`${barlow.variable} font-sans`}>
-        <TRPCReactProvider>
-          <ThemeProvider>
+    <html
+      lang="en"
+      className={`${inter.variable} ${robotoMono.variable} h-full antialiased`}
+    >
+      <body className="relative isolate min-h-full flex flex-col">
+        <ThemeProvider>
+          <div
+            aria-hidden="true"
+            className="page-gradient-bg pointer-events-none fixed inset-0 z-0"
+          />
+
+          <div className="relative z-10 flex min-h-full flex-1 flex-col">
             <Header />
-            <main>
-              <ChangeColorMode />
-              {children}
-            </main>
-            <ToastContainer />
-            <Footer />
-          </ThemeProvider>
-        </TRPCReactProvider>
+            {children}
+            <NetworkingLinks />
+          </div>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

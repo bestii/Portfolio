@@ -1,0 +1,197 @@
+@import "tailwindcss";
+
+:root {
+  /* Light theme colors (default) */
+  --bg-primary: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --bg-tertiary: #e2e8f0;
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+
+  --accent: #158876;
+
+  /* Theme color aliases (useful for components / Tailwind)
+     Use --color-* so components can reference them consistently */
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-tertiary: var(--bg-tertiary);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+
+  --color-accent: var(--accent);
+
+  /* Expose friendly CSS variables for fonts (populated via next/font on <html>) */
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-roboto-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark theme colors (Navy theme) */
+    --bg-primary: #0a192f;
+    --bg-secondary: #112240;
+    --bg-tertiary: #233554;
+
+    --text-primary: #e6f1ff;
+    --text-secondary: #ccd6f6;
+    --text-muted: #8892b0;
+
+    --accent: #41b38a;
+
+    /* Update alias vars to point to dark values */
+    --color-bg-primary: var(--bg-primary);
+    --color-bg-secondary: var(--bg-secondary);
+    --color-bg-tertiary: var(--bg-tertiary);
+
+    --color-text-primary: var(--text-primary);
+    --color-text-secondary: var(--text-secondary);
+    --color-text-muted: var(--text-muted);
+
+    --color-accent: var(--accent);
+  }
+}
+
+/* Allow explicit theme control via `data-theme` on the <html> element.
+   This overrides the prefers-color-scheme media query when set. */
+:root[data-theme="light"] {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --bg-tertiary: #e2e8f0;
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+
+  --accent: #059669;
+
+  --background: var(--bg-primary);
+  --foreground: var(--text-primary);
+
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-tertiary: var(--bg-tertiary);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+
+  --color-accent: var(--accent);
+}
+
+:root[data-theme="dark"] {
+  --bg-primary: #0a192f;
+  --bg-secondary: #112240;
+  --bg-tertiary: #233554;
+
+  --text-primary: #e6f1ff;
+  --text-secondary: #ccd6f6;
+  --text-muted: #8892b0;
+
+  --accent: #64ffda;
+
+  --background: var(--bg-primary);
+  --foreground: var(--text-primary);
+
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-tertiary: var(--bg-tertiary);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+
+  --color-accent: var(--accent);
+}
+
+/* Smooth visual transition when theme colors change */
+:root {
+  --theme-duration: 220ms;
+  --theme-easing: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*,
+*::before,
+*::after {
+  transition:
+    background-color var(--theme-duration) var(--theme-easing),
+    color var(--theme-duration) var(--theme-easing),
+    border-color var(--theme-duration) var(--theme-easing),
+    box-shadow var(--theme-duration) var(--theme-easing),
+    fill var(--theme-duration) var(--theme-easing),
+    stroke var(--theme-duration) var(--theme-easing);
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-inter), sans-serif;
+}
+
+.page-gradient-bg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+:root:not([data-theme]) .page-gradient-bg,
+:root[data-theme="light"] .page-gradient-bg {
+  background-image:
+    radial-gradient(
+      circle at 20% 15%,
+      rgba(5, 150, 105, 0.14),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 85% 95%,
+      rgba(241, 245, 249, 0.82),
+      transparent 38%
+    );
+}
+
+:root[data-theme="dark"] .page-gradient-bg {
+  background-image:
+    radial-gradient(
+      circle at 20% 15%,
+      rgba(100, 255, 218, 0.14),
+      transparent 32%
+    ),
+    radial-gradient(circle at 85% 95%, rgba(17, 34, 64, 0.82), transparent 38%);
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation-name: reveal-up;
+  animation-duration: 1000ms;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  animation-fill-mode: both;
+  animation-delay: var(--reveal-delay, 0ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-up {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
