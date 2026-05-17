@@ -1,7 +1,5 @@
-import Image from "next/image";
-
-import portraitImage from "@/assets/images/portrait.png";
 import Reveal from "@/components/animations/Reveal";
+import AboutMePortrait from "./AboutMePortrait";
 
 const technologies = [
   "JavaScript",
@@ -61,21 +59,7 @@ const AboutMe = () => {
         </div>
 
         <Reveal as="div" delay={180} className="lg:pt-4">
-          <div className="group relative mx-auto w-full max-w-md">
-            <div
-              aria-hidden="true"
-              className="absolute inset-0 translate-x-5 translate-y-5 rounded-2xl border-2 border-(--color-accent) transition-transform  group-hover:translate-x-7 group-hover:translate-y-7"
-            />
-
-            <div className="relative overflow-hidden rounded-2xl bg-(--color-bg-secondary) shadow-2xl shadow-black/20 ring-1 ring-white/10 transition-transform group-hover:-translate-x-1 group-hover:-translate-y-1">
-              <Image
-                src={portraitImage}
-                alt="Portrait of Bestin John"
-                className="h-auto w-full object-cover grayscale saturate-0 contrast-110 transition group-hover:grayscale-0 group-hover:saturate-100 group-hover:contrast-100"
-                priority={false}
-              />
-            </div>
-          </div>
+          <AboutMePortrait />
         </Reveal>
       </div>
     </section>
