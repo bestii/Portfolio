@@ -1,33 +1,15 @@
-.marquee {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-}
-
 .track {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
   width: max-content;
-  animation: scroll 60s linear infinite;
+  animation: scroll 120s linear infinite;
   will-change: transform;
 }
 
-.logo {
-  flex: 0 0 auto;
-  display: flex;
-  gap: 0.6rem;
-  align-items: center;
-  justify-content: center;
-  min-width: 8.5rem;
-  height: 4.5rem;
-  padding: 0 1rem;
+.marquee {
+  position: relative;
 }
 
-.icon {
-  width: 4rem;
-  height: 4rem;
-  object-fit: contain;
+.marquee:hover .track {
+  animation-play-state: paused;
 }
 
 @keyframes scroll {
@@ -43,21 +25,5 @@
 @media (prefers-reduced-motion: reduce) {
   .track {
     animation: none;
-  }
-}
-
-@media (max-width: 640px) {
-  .marquee {
-    padding: 0.85rem;
-  }
-
-  .logo {
-    min-width: 7.2rem;
-    height: 4rem;
-    padding: 0 0.8rem;
-  }
-
-  .label {
-    font-size: 0.76rem;
   }
 }

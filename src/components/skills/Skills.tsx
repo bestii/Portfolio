@@ -31,35 +31,111 @@ type SkillItem = {
   id: string;
   label: string;
   logo: typeof cssLogo;
+  url: string;
 };
 
 const Skills = () => {
   const logos: SkillItem[] = [
-    { id: "react", label: "React", logo: reactLogo },
-    { id: "css", label: "CSS", logo: cssLogo },
-    { id: "docker", label: "Docker", logo: dockerLogo },
-    { id: "git", label: "Git", logo: gitLogo },
-    { id: "html", label: "HTML", logo: htmlLogo },
-    { id: "javascript", label: "JavaScript", logo: javascriptLogo },
-    { id: "nestjs", label: "NestJS", logo: nestjsLogo },
-    { id: "nodejs", label: "Node.js", logo: nodejsLogo },
-    { id: "npm", label: "npm", logo: npmLogo },
-    { id: "nx", label: "Nx", logo: nxLogo },
-    { id: "openapi", label: "OpenAPI", logo: openapiLogo },
-    { id: "playwright", label: "Playwright", logo: playwrightLogo },
-    { id: "postgresql", label: "PostgreSQL", logo: postgresqlLogo },
-    { id: "prisma", label: "Prisma", logo: prismaLogo },
-    { id: "pwa", label: "PWA", logo: pwaLogo },
-    { id: "pnpm", label: "pnpm", logo: pnpmLogo },
-    { id: "storybook", label: "Storybook", logo: storybookLogo },
-    { id: "tailwindcss", label: "Tailwind CSS", logo: tailwindcssLogo },
-    { id: "typescript", label: "TypeScript", logo: typescriptLogo },
-    { id: "vite", label: "Vite", logo: viteLogo },
-    { id: "vitest", label: "Vitest", logo: vitestLogo },
-    { id: "zod", label: "Zod", logo: zodLogo },
+    { id: "react", label: "React", logo: reactLogo, url: "https://react.dev/" },
+    {
+      id: "css",
+      label: "CSS",
+      logo: cssLogo,
+      url: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+    },
+    {
+      id: "docker",
+      label: "Docker",
+      logo: dockerLogo,
+      url: "https://www.docker.com/",
+    },
+    { id: "git", label: "Git", logo: gitLogo, url: "https://git-scm.com/" },
+    {
+      id: "html",
+      label: "HTML",
+      logo: htmlLogo,
+      url: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+    },
+    {
+      id: "javascript",
+      label: "JavaScript",
+      logo: javascriptLogo,
+      url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+    },
+    {
+      id: "nestjs",
+      label: "NestJS",
+      logo: nestjsLogo,
+      url: "https://nestjs.com/",
+    },
+    {
+      id: "nodejs",
+      label: "Node.js",
+      logo: nodejsLogo,
+      url: "https://nodejs.org/",
+    },
+    { id: "npm", label: "npm", logo: npmLogo, url: "https://www.npmjs.com/" },
+    { id: "nx", label: "Nx", logo: nxLogo, url: "https://nx.dev/" },
+    {
+      id: "openapi",
+      label: "OpenAPI",
+      logo: openapiLogo,
+      url: "https://www.openapis.org/",
+    },
+    {
+      id: "playwright",
+      label: "Playwright",
+      logo: playwrightLogo,
+      url: "https://playwright.dev/",
+    },
+    {
+      id: "postgresql",
+      label: "PostgreSQL",
+      logo: postgresqlLogo,
+      url: "https://www.postgresql.org/",
+    },
+    {
+      id: "prisma",
+      label: "Prisma",
+      logo: prismaLogo,
+      url: "https://www.prisma.io/",
+    },
+    {
+      id: "pwa",
+      label: "PWA",
+      logo: pwaLogo,
+      url: "https://web.dev/progressive-web-apps/",
+    },
+    { id: "pnpm", label: "pnpm", logo: pnpmLogo, url: "https://pnpm.io/" },
+    {
+      id: "storybook",
+      label: "Storybook",
+      logo: storybookLogo,
+      url: "https://storybook.js.org/",
+    },
+    {
+      id: "tailwindcss",
+      label: "Tailwind CSS",
+      logo: tailwindcssLogo,
+      url: "https://tailwindcss.com/",
+    },
+    {
+      id: "typescript",
+      label: "TypeScript",
+      logo: typescriptLogo,
+      url: "https://www.typescriptlang.org/",
+    },
+    { id: "vite", label: "Vite", logo: viteLogo, url: "https://vitejs.dev/" },
+    {
+      id: "vitest",
+      label: "Vitest",
+      logo: vitestLogo,
+      url: "https://vitest.dev/",
+    },
+    { id: "zod", label: "Zod", logo: zodLogo, url: "https://zod.dev/" },
   ];
 
-  const loop = [...logos, ...logos];
+  const loop = [...logos, ...logos, ...logos];
 
   return (
     <section id="skills" className="py-24 max-w-225 mx-auto">
@@ -89,17 +165,33 @@ const Skills = () => {
         ))}
       </ul>
 
-      <Reveal as="div" delay={180} className={`${styles.marquee} mt-10`}>
-        <div className={styles.track} aria-hidden="true">
-          {loop.map(({ id, logo }) => (
-            <div className={styles.logo} key={id}>
-              <Image
-                src={logo}
-                alt=""
-                width={40}
-                height={40}
-                className={styles.icon}
-              />
+      <Reveal
+        as="div"
+        delay={180}
+        className={`${styles.marquee} relative overflow-hidden w-full mt-10 cursor-pointer`}
+      >
+        <div
+          className={`${styles.track} flex gap-8 items-center`}
+          aria-hidden="true"
+        >
+          {loop.map(({ id, logo, label, url }, i) => (
+            <div
+              className="flex-none flex items-center justify-center gap-3 min-w-34 h-18 px-4"
+              key={`${id}-${i}`}
+            >
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center"
+              >
+                <Image
+                  src={logo}
+                  alt={label}
+                  width={50}
+                  className="object-contain"
+                />
+              </a>
             </div>
           ))}
         </div>
