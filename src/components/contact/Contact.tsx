@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-24 sm:py-32">
+    <section id="contact" className="py-32 sm:py-40">
       <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
         <Reveal
           as="p"

@@ -30,7 +30,7 @@ const SectionAccordion = ({
   const activeItem = items[activeIndex] ?? items[0];
 
   return (
-    <section id={id} className="py-24 max-w-175 mx-auto">
+    <section id={id} className="py-32 max-w-175 mx-auto">
       <Reveal
         as="div"
         delay={60}

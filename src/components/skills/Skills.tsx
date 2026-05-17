@@ -138,7 +138,7 @@ const Skills = () => {
   const loop = [...logos, ...logos, ...logos];
 
   return (
-    <section id="skills" className="py-24 max-w-225 mx-auto">
+    <section id="skills" className="py-32 max-w-225 mx-auto">
       <Reveal
         as="div"
         delay={60}
