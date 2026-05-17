@@ -47,6 +47,12 @@
   border-color: color-mix(in srgb, var(--color-accent) 48%, transparent);
 }
 
+.icon {
+  width: 2.35rem;
+  height: 2.35rem;
+  object-fit: contain;
+}
+
 .fallback {
   display: inline-flex;
   align-items: center;
