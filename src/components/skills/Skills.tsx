@@ -6,7 +6,6 @@ import gitLogo from "@/assets/tech/git.svg";
 import htmlLogo from "@/assets/tech/html.svg";
 import javascriptLogo from "@/assets/tech/javascript.svg";
 import nestjsLogo from "@/assets/tech/nestjs.svg";
-import nextjsLogo from "@/assets/tech/nextjs.svg";
 import nodejsLogo from "@/assets/tech/nodejs.svg";
 import npmLogo from "@/assets/tech/npm.svg";
 import nxLogo from "@/assets/tech/nx.svg";
@@ -43,7 +42,6 @@ const Skills = () => {
     { id: "html", label: "HTML", logo: htmlLogo },
     { id: "javascript", label: "JavaScript", logo: javascriptLogo },
     { id: "nestjs", label: "NestJS", logo: nestjsLogo },
-    { id: "nextjs", label: "Next.js", logo: nextjsLogo },
     { id: "nodejs", label: "Node.js", logo: nodejsLogo },
     { id: "npm", label: "npm", logo: npmLogo },
     { id: "nx", label: "Nx", logo: nxLogo },
@@ -93,10 +91,10 @@ const Skills = () => {
 
       <Reveal as="div" delay={180} className={`${styles.marquee} mt-10`}>
         <div className={styles.track} aria-hidden="true">
-          {loop.map((l, i) => (
-            <div className={styles.logo} key={`${l.id}-${i}`}>
+          {loop.map(({ id, logo }) => (
+            <div className={styles.logo} key={id}>
               <Image
-                src={l.logo}
+                src={logo}
                 alt=""
                 width={40}
                 height={40}
