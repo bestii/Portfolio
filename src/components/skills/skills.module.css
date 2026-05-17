@@ -2,27 +2,14 @@
   position: relative;
   overflow: hidden;
   width: 100%;
-  border: 1px solid var(--color-bg-tertiary);
-  border-radius: 1rem;
-  padding: 1rem;
-  background:
-    linear-gradient(
-      180deg,
-      color-mix(in srgb, var(--color-bg-secondary) 88%, transparent),
-      color-mix(in srgb, var(--color-bg-secondary) 72%, transparent)
-    ),
-    var(--color-bg-secondary);
-  box-shadow:
-    inset 0 1px 0 color-mix(in srgb, #ffffff 12%, transparent),
-    0 14px 34px color-mix(in srgb, #000000 10%, transparent);
 }
 
 .track {
   display: flex;
-  gap: 0.9rem;
+  gap: 2rem;
   align-items: center;
   width: max-content;
-  animation: scroll 20s linear infinite;
+  animation: scroll 60s linear infinite;
   will-change: transform;
 }
 
@@ -35,44 +22,11 @@
   min-width: 8.5rem;
   height: 4.5rem;
   padding: 0 1rem;
-  border-radius: 0.85rem;
-  border: 1px solid
-    color-mix(in srgb, var(--color-bg-tertiary) 92%, transparent);
-  color: var(--color-text-secondary);
-  background: color-mix(in srgb, var(--color-bg-primary) 78%, transparent);
-}
-
-.logo:hover {
-  color: var(--color-accent);
-  border-color: color-mix(in srgb, var(--color-accent) 48%, transparent);
 }
 
 .icon {
-  width: 2.35rem;
-  height: 2.35rem;
+  width: 4rem;
   object-fit: contain;
-}
-
-.fallback {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.1rem;
-  height: 2.1rem;
-  border-radius: 999px;
-  font-family: var(--font-mono), monospace;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  text-transform: lowercase;
-  color: var(--color-text-primary);
-  background: color-mix(in srgb, var(--color-bg-tertiary) 70%, transparent);
-}
-
-.label {
-  font-family: var(--font-mono), monospace;
-  font-size: 0.84rem;
-  letter-spacing: 0.02em;
 }
 
 @keyframes scroll {
