@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import portraitImage from "@/assets/images/portrait.jpg";
+import portraitImage from "@/assets/images/portrait.png";
 import Reveal from "@/components/animations/Reveal";
 
 const technologies = [
