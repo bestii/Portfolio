@@ -16,7 +16,7 @@ const Contact = () => {
         <Reveal
           as="h2"
           delay={120}
-          className="mt-4 text-4xl font-semibold tracking-tight text-(--color-text-primary) sm:text-5xl md:text-6xl"
+          className="mt-4 text-2xl font-semibold tracking-tight text-(--color-text-primary) sm:text-5xl"
         >
           Get In Touch
         </Reveal>
@@ -24,7 +24,7 @@ const Contact = () => {
         <Reveal
           as="p"
           delay={180}
-          className="mt-8 max-w-2xl text-lg leading-9 text-(--color-text-muted) sm:text-xl"
+          className="mt-8 max-w-2xl text-lg leading-9 text-(--color-text-muted)"
         >
           Although I’m not currently looking for any new opportunities, my inbox
           is always open. Whether you have a question or just want to say hi,
@@ -34,7 +34,7 @@ const Contact = () => {
         <Reveal as="div" delay={240} className="mt-14">
           <Link
             href="mailto:hello@bestinjohn.com"
-            className="inline-flex min-w-52 items-center justify-center rounded-md border border-(--color-accent) px-8 py-5 font-mono text-lg text-(--color-accent) transition duration-300 hover:-translate-y-1 hover:bg-(--color-accent)/10 hover:shadow-lg hover:shadow-black/10"
+            className="inline-flex items-center justify-center rounded-md border border-(--color-accent) px-6 py-4 font-mono text-lg text-(--color-accent) transition duration-300 hover:-translate-y-1 hover:bg-(--color-accent)/10 hover:shadow-lg hover:shadow-black/10"
           >
             Say Hello
           </Link>
