@@ -147,7 +147,7 @@ const Skills = () => {
         <span className="font-mono text-lg font-semibold text-(--color-accent)">
           04.
         </span>
-        <h2 className="text-2xl font-semibold sm:text-3xl">Skills</h2>
+        <h2 className="text-2xl font-semibold sm:text-3xl">My Tech Stack</h2>
         <span className="h-px flex-1 bg-(--color-bg-tertiary)" />
       </Reveal>
 
@@ -156,7 +156,8 @@ const Skills = () => {
         delay={120}
         className="mt-6 max-w-2xl text-base leading-8 text-(--color-text-muted)"
       >
-        Tools and frameworks I use to ship fast, maintainable products.
+        The technologies and tools I leverage to build fast, reliable, and
+        scalable solutions that users love.
       </Reveal>
 
       <ul className="sr-only">
