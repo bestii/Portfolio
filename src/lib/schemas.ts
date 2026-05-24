@@ -27,7 +27,6 @@ export const projectsSchema = z.array(projectSchema);
 
 export const aboutSchema = z.object({
   paragraphs: z.array(z.string()),
-  portrait: z.string().optional(),
 });
 
 export const linksSchema = z.object({

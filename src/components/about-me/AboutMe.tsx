@@ -1,16 +1,11 @@
 import Reveal from "@/components/animations/Reveal";
 import AboutMePortrait from "./AboutMePortrait";
 
-const technologies = [
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Node.js",
-  "Accessibility",
-];
+type Props = {
+  paragraphs: string[];
+};
 
-const AboutMe = () => {
+const AboutMe = ({ paragraphs }: Props) => {
   return (
     <section id="about" className="py-32 max-w-225 mx-auto">
       <div className="grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(320px,420px)] lg:items-start">
@@ -28,34 +23,12 @@ const AboutMe = () => {
           </Reveal>
 
           <div className="mt-10 space-y-5 text-base leading-8 text-(--color-text-muted) md:text-lg">
-            <Reveal as="p" delay={120}>
-              I build thoughtful digital products with a focus on clarity,
-              performance, and accessibility.
-            </Reveal>
-
-            <Reveal as="p" delay={180}>
-              My work has ranged from marketing sites to product interfaces, and
-              I enjoy shaping experiences that feel polished without getting in
-              the way of the content.
-            </Reveal>
-
-            <Reveal as="p" delay={240}>
-              Here are a few technologies I have been working with recently:
-            </Reveal>
-          </div>
-
-          <Reveal
-            as="ul"
-            delay={300}
-            className="mt-8 grid gap-3 text-sm font-mono text-(--color-text-secondary) sm:grid-cols-2"
-          >
-            {technologies.map((technology) => (
-              <li key={technology} className="flex items-center gap-3">
-                <span className="text-(--color-accent)">▹</span>
-                <span>{technology}</span>
-              </li>
+            {paragraphs.map((text, i) => (
+              <Reveal key={i} as="p" delay={120 + i * 60}>
+                {text}
+              </Reveal>
             ))}
-          </Reveal>
+          </div>
         </div>
 
         <Reveal as="div" delay={180} className="lg:pt-4">
