@@ -1,12 +1,12 @@
 "use client";
 
-import Link from "next/link";
-import Image from "next/image";
 import logoDark from "@/assets/logos/logo-dark.png";
 import logoLight from "@/assets/logos/logo-light.png";
 import ThemeSwitcher from "@/components/theme-switcher/ThemeSwitcher";
+import { THEME, useTheme } from "@/providers/theme/ThemeProvider";
+import Image from "next/image";
+import Link from "next/link";
 import MobileMenu from "./MobileMenu";
-import { useTheme, THEME } from "@/providers/theme/ThemeProvider";
 
 const Header = () => {
   const { theme } = useTheme();
@@ -15,7 +15,7 @@ const Header = () => {
   const navItems = [
     { label: "About", href: "#about" },
     { label: "Experience", href: "#experience" },
-    { label: "Work", href: "#projects" },
+    { label: "Skills", href: "#skills" },
     { label: "Contact", href: "#contact" },
   ];
 
