@@ -1,9 +1,11 @@
+import Header from "@/components/header/Header";
+import NetworkingLinks from "@/components/networking-links/NetworkingLinks";
+import { fetchCmsJson } from "@/lib/cms";
+import { linksSchema } from "@/lib/schemas";
+import ThemeProvider from "@/providers/theme/ThemeProvider";
 import type { Metadata } from "next";
 import { Inter, Roboto_Mono } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/header/Header";
-import ThemeProvider from "@/providers/theme/ThemeProvider";
-import NetworkingLinks from "@/components/networking-links/NetworkingLinks";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -58,11 +60,14 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+const RootLayout = async ({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>) => {
+  const linksResult = await fetchCmsJson("/links.json", linksSchema);
+  const links = linksResult.ok ? linksResult.data : null;
+
   return (
     <html
       lang="en"
@@ -78,10 +83,14 @@ export default function RootLayout({
           <div className="relative z-10 flex min-h-full flex-1 flex-col">
             <Header />
             {children}
-            <NetworkingLinks />
+            {links && (
+              <NetworkingLinks socials={links.socials} email={links.email} />
+            )}
           </div>
         </ThemeProvider>
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;
