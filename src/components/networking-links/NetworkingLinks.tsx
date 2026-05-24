@@ -7,6 +7,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import type { IconDefinition } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { getLinks } from "@/services/cmsService";
 
 const platformIcons: Record<string, IconDefinition> = {
   facebook: Facebook,
@@ -19,11 +20,6 @@ const platformIcons: Record<string, IconDefinition> = {
 type Social = {
   platform: string;
   url: string;
-};
-
-type Props = {
-  socials: Social[];
-  email: string;
 };
 
 const SocialLinks = ({ socials }: { socials: Social[] }) => {
@@ -72,11 +68,14 @@ const EmailLink = ({ email }: { email: string }) => (
   </div>
 );
 
-const NetworkingLinks = ({ socials, email }: Props) => {
+const NetworkingLinks = async () => {
+  const links = await getLinks();
+  if (!links) return null;
+
   return (
     <>
-      <SocialLinks socials={socials} />
-      <EmailLink email={email} />
+      <SocialLinks socials={links.socials} />
+      <EmailLink email={links.email} />
     </>
   );
 };

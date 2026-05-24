@@ -6,46 +6,17 @@ import {
   experiencesSchema,
   introductionSchema,
   linksSchema,
-  type About,
-  type ContactData,
-  type Education,
-  type Experience,
-  type Introduction,
-  type Links,
 } from "@/lib/schemas";
+import type { ZodType } from "zod";
 
-export type CmsData = {
-  experiences: Experience[] | null;
-  education: Education[] | null;
-  about: About | null;
-  links: Links | null;
-  contact: ContactData | null;
-  introduction: Introduction | null;
-};
+async function fetchCmsData<T>(path: string, schema: ZodType<T>): Promise<T | null> {
+  const result = await fetchCmsJson<T>(path, schema);
+  return result.ok ? result.data : null;
+}
 
-export const loadCmsData = async (): Promise<CmsData> => {
-  const [
-    experiencesResult,
-    educationResult,
-    aboutResult,
-    linksResult,
-    contactResult,
-    introductionResult,
-  ] = await Promise.all([
-    fetchCmsJson("/experiences.json", experiencesSchema),
-    fetchCmsJson("/education.json", educationSchema),
-    fetchCmsJson("/about.json", aboutSchema),
-    fetchCmsJson("/links.json", linksSchema),
-    fetchCmsJson("/contact.json", contactSchema),
-    fetchCmsJson("/introduction.json", introductionSchema),
-  ]);
-
-  return {
-    experiences: experiencesResult.ok ? experiencesResult.data : null,
-    education: educationResult.ok ? educationResult.data : null,
-    about: aboutResult.ok ? aboutResult.data : null,
-    links: linksResult.ok ? linksResult.data : null,
-    contact: contactResult.ok ? contactResult.data : null,
-    introduction: introductionResult.ok ? introductionResult.data : null,
-  };
-};
+export const getIntroduction = () => fetchCmsData("/introduction.json", introductionSchema);
+export const getAbout = () => fetchCmsData("/about.json", aboutSchema);
+export const getExperiences = () => fetchCmsData("/experiences.json", experiencesSchema);
+export const getEducation = () => fetchCmsData("/education.json", educationSchema);
+export const getContact = () => fetchCmsData("/contact.json", contactSchema);
+export const getLinks = () => fetchCmsData("/links.json", linksSchema);

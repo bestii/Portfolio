@@ -1,7 +1,5 @@
 import Header from "@/components/header/Header";
 import NetworkingLinks from "@/components/networking-links/NetworkingLinks";
-import { fetchCmsJson } from "@/lib/cms";
-import { linksSchema } from "@/lib/schemas";
 import ThemeProvider from "@/providers/theme/ThemeProvider";
 import type { Metadata } from "next";
 import { Inter, Roboto_Mono } from "next/font/google";
@@ -65,9 +63,6 @@ const RootLayout = async ({
 }: Readonly<{
   children: React.ReactNode;
 }>) => {
-  const linksResult = await fetchCmsJson("/links.json", linksSchema);
-  const links = linksResult.ok ? linksResult.data : null;
-
   return (
     <html
       lang="en"
@@ -83,9 +78,7 @@ const RootLayout = async ({
           <div className="relative z-10 flex min-h-full flex-1 flex-col">
             <Header />
             {children}
-            {links && (
-              <NetworkingLinks socials={links.socials} email={links.email} />
-            )}
+            <NetworkingLinks />
           </div>
         </ThemeProvider>
       </body>

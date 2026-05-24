@@ -1,18 +1,16 @@
-import SectionAccordion, {
-  type AccordionItem,
-} from "@/components/section-accordion/SectionAccordion";
+import SectionAccordion from "@/components/section-accordion/SectionAccordion";
+import { getEducation } from "@/services/cmsService";
 
-type Props = {
-  items: AccordionItem[];
-};
+const Education = async () => {
+  const education = await getEducation();
+  if (!education) return null;
 
-const Education = ({ items }: Props) => {
   return (
     <SectionAccordion
       id="education"
       sectionNumber="03"
       heading="Where I Studied"
-      items={items}
+      items={education}
     />
   );
 };

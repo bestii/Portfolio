@@ -1,13 +1,12 @@
 import Reveal from "@/components/animations/Reveal";
+import { getIntroduction } from "@/services/cmsService";
 
-type Props = {
-  greeting: string;
-  name: string;
-  tagline: string;
-  description: string;
-};
+const Introduction = async () => {
+  const introduction = await getIntroduction();
+  if (!introduction) return null;
 
-const Introduction = ({ greeting, name, tagline, description }: Props) => {
+  const { greeting, name, tagline, description } = introduction;
+
   return (
     <section
       id="introduction"

@@ -1,15 +1,13 @@
 import Reveal from "@/components/animations/Reveal";
+import { getContact } from "@/services/cmsService";
 import Link from "next/link";
 
-type Props = {
-  subheading: string;
-  heading: string;
-  description: string;
-  buttonText: string;
-  email: string;
-};
+const Contact = async () => {
+  const contact = await getContact();
+  if (!contact) return null;
 
-const Contact = ({ subheading, heading, description, buttonText, email }: Props) => {
+  const { subheading, heading, description, buttonText, email } = contact;
+
   return (
     <section id="contact" className="py-32 sm:py-40">
       <div className="mx-auto flex max-w-3xl flex-col items-center text-center">

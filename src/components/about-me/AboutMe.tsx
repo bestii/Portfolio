@@ -1,11 +1,11 @@
 import Reveal from "@/components/animations/Reveal";
+import { getAbout } from "@/services/cmsService";
 import AboutMePortrait from "./AboutMePortrait";
 
-type Props = {
-  paragraphs: string[];
-};
+const AboutMe = async () => {
+  const about = await getAbout();
+  if (!about) return null;
 
-const AboutMe = ({ paragraphs }: Props) => {
   return (
     <section id="about" className="py-32 max-w-225 mx-auto">
       <div className="grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(320px,420px)] lg:items-start">
@@ -23,7 +23,7 @@ const AboutMe = ({ paragraphs }: Props) => {
           </Reveal>
 
           <div className="mt-10 space-y-5 text-base leading-8 text-(--color-text-muted) md:text-lg">
-            {paragraphs.map((text, i) => (
+            {about.paragraphs.map((text, i) => (
               <Reveal key={i} as="p" delay={120 + i * 60}>
                 {text}
               </Reveal>
