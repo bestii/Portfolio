@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 import Reveal from "@/components/animations/Reveal";
 
@@ -8,9 +9,8 @@ type AccordionItem = {
   label: string;
   title: string;
   timeframe: string;
-  location: string;
-  summary: string;
   bullets: string[];
+  url?: string;
 };
 
 type SectionAccordionProps = {
