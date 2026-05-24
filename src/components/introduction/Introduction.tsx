@@ -1,6 +1,13 @@
 import Reveal from "@/components/animations/Reveal";
 
-const Introduction = () => {
+type Props = {
+  greeting: string;
+  name: string;
+  tagline: string;
+  description: string;
+};
+
+const Introduction = ({ greeting, name, tagline, description }: Props) => {
   return (
     <section
       id="introduction"
@@ -13,7 +20,7 @@ const Introduction = () => {
           delay={40}
           className="font-mono text-sm tracking-widest text-(--color-accent)"
         >
-          Hi, my name is
+          {greeting}
         </Reveal>
 
         <Reveal
@@ -21,7 +28,7 @@ const Introduction = () => {
           delay={130}
           className="mt-3 text-4xl font-bold leading-tight text-(--color-text-primary) sm:text-6xl md:text-7xl"
         >
-          Bestin John.
+          {name}
         </Reveal>
 
         <Reveal
@@ -29,7 +36,7 @@ const Introduction = () => {
           delay={220}
           className="mt-2 text-4xl font-bold leading-tight text-(--color-text-muted) sm:text-6xl md:text-7xl"
         >
-          I build things for the web.
+          {tagline}
         </Reveal>
 
         <Reveal
@@ -37,8 +44,7 @@ const Introduction = () => {
           delay={320}
           className="mt-8 max-w-2xl text-base leading-8 text-(--color-text-muted) md:text-lg"
         >
-          I am a frontend developer focused on building fast, accessible, and
-          thoughtful digital experiences with React and modern web technologies.
+          {description}
         </Reveal>
       </div>
     </section>
