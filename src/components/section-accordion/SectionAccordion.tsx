@@ -83,7 +83,18 @@ const SectionAccordion = ({
         >
           <div>
             <h3 className="text-xl font-medium text-(--color-text-primary) mb-2">
-              {activeItem.title}
+              {activeItem.url ? (
+                <Link
+                  href={activeItem.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors hover:text-(--color-accent)"
+                >
+                  {activeItem.title}
+                </Link>
+              ) : (
+                activeItem.title
+              )}
             </h3>
             <p className="font-mono text-sm text-(--color-text-muted)">
               {activeItem.timeframe}
