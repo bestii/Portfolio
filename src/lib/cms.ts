@@ -1,11 +1,11 @@
 import type { ZodType } from "zod";
 
-export type CmsResult<T> = { ok: true; data: T } | { ok: false; error: string };
+export type CMSResult<T> = { ok: true; data: T } | { ok: false; error: string };
 
-export async function fetchCmsJson<T>(
+export const fetchCMSJson = async <T>(
   path: string,
   schema: ZodType<T>,
-): Promise<CmsResult<T>> {
+): Promise<CMSResult<T>> => {
   const baseUrl = process.env.CMS_BASE_URL;
 
   if (!baseUrl) {
@@ -44,4 +44,4 @@ export async function fetchCmsJson<T>(
       error: `Failed to fetch ${path}: ${err instanceof Error ? err.message : String(err)}`,
     };
   }
-}
+};
