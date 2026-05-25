@@ -3,9 +3,11 @@ import { z } from "zod";
 export const accordionItemSchema = z.object({
   label: z.string(),
   title: z.string(),
+  titleLinkText: z.string(),
   timeframe: z.string(),
   bullets: z.array(z.string()),
   url: z.url().optional(),
+  tech: z.array(z.string()).optional(),
 });
 
 export const experiencesSchema = z.array(accordionItemSchema);

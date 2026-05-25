@@ -1,13 +1,14 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
+import { useState } from "react";
 
 import Reveal from "@/components/animations/Reveal";
 
 type AccordionItem = {
   label: string;
   title: string;
+  titleLinkText: string;
   timeframe: string;
   bullets: string[];
   url?: string;
@@ -18,6 +19,26 @@ type SectionAccordionProps = {
   heading: string;
   id: string;
   items: AccordionItem[];
+};
+
+const TitleText = ({ item }: { item: AccordionItem }) => {
+  return (
+    <>
+      {item.title} @{" "}
+      {item.url ? (
+        <Link
+          href={item.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="transition-colors hover:text-(--color-accent)"
+        >
+          {item.titleLinkText}
+        </Link>
+      ) : (
+        item.titleLinkText
+      )}
+    </>
+  );
 };
 
 const SectionAccordion = ({
@@ -83,18 +104,7 @@ const SectionAccordion = ({
         >
           <div>
             <h3 className="text-xl font-medium text-(--color-text-primary) mb-2">
-              {activeItem.url ? (
-                <Link
-                  href={activeItem.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-colors hover:text-(--color-accent)"
-                >
-                  {activeItem.title}
-                </Link>
-              ) : (
-                activeItem.title
-              )}
+              <TitleText item={activeItem} />
             </h3>
             <p className="font-mono text-sm text-(--color-text-muted)">
               {activeItem.timeframe}
