@@ -64,11 +64,11 @@ const SectionAccordion = ({
         <span className="h-px flex-1 bg-(--color-bg-tertiary)" />
       </Reveal>
 
-      <div className="mt-12 grid gap-10 lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-16">
+      <div className="mt-12 grid gap-6 lg:grid-cols-[185px_minmax(0,1fr)]">
         <div
           role="tablist"
           aria-label={heading}
-          className="flex overflow-x-auto border-b border-(--color-bg-tertiary) lg:flex-col lg:border-b-0 lg:border-r"
+          className="flex overflow-x-auto lg:flex-col"
         >
           {items.map((item, index) => {
             const isActive = index === activeIndex;
