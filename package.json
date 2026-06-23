@@ -6,27 +6,32 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "vitest run"
   },
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^7.2.0",
     "@fortawesome/react-fontawesome": "^3.3.1",
     "@headlessui/react": "^2.2.10",
-    "framer-motion": "^12.40.0",
-    "lucide-react": "^1.16.0",
-    "next": "16.2.6",
-    "react": "19.2.6",
-    "react-dom": "19.2.6",
+    "framer-motion": "^12.41.0",
+    "lucide-react": "^1.21.0",
+    "next": "16.2.9",
+    "react": "19.2.7",
+    "react-dom": "19.2.7",
     "zod": "^4.4.3"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.3.0",
+    "@tailwindcss/postcss": "^4.3.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
     "@types/node": "^25.9.1",
-    "@types/react": "^19.2.15",
+    "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "eslint": "^9",
-    "eslint-config-next": "16.2.6",
-    "tailwindcss": "^4.3.0",
-    "typescript": "^6.0.3"
+    "eslint-config-next": "16.2.9",
+    "jsdom": "^29.1.1",
+    "tailwindcss": "^4.3.1",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.9"
   }
 }

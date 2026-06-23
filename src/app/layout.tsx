@@ -1,5 +1,6 @@
 import Header from "@/components/header/Header";
 import NetworkingLinks from "@/components/networking-links/NetworkingLinks";
+import { SpotlightGradient } from "@/components/spotlight/SpotlightGradient";
 import ThemeProvider from "@/providers/theme/ThemeProvider";
 import type { Metadata } from "next";
 import { Inter, Roboto_Mono } from "next/font/google";
@@ -70,10 +71,7 @@ const RootLayout = async ({
     >
       <body className="relative isolate min-h-full flex flex-col">
         <ThemeProvider>
-          <div
-            aria-hidden="true"
-            className="page-gradient-bg pointer-events-none fixed inset-0 z-0"
-          />
+          <SpotlightGradient />
 
           <div className="relative z-10 flex min-h-full flex-1 flex-col">
             <Header />
