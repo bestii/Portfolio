@@ -1,4 +1,5 @@
 import Header from "@/components/header/Header";
+import MobileMenuServer from "@/components/header/MobileMenuServer";
 import NetworkingLinks from "@/components/networking-links/NetworkingLinks";
 import { SpotlightGradient } from "@/components/spotlight/SpotlightGradient";
 import ThemeProvider from "@/providers/theme/ThemeProvider";
@@ -74,7 +75,9 @@ const RootLayout = async ({
           <SpotlightGradient />
 
           <div className="relative z-10 flex min-h-full flex-1 flex-col">
-            <Header />
+            <Header
+              mobileMenu={<MobileMenuServer />}
+            />
             {children}
             <NetworkingLinks />
           </div>

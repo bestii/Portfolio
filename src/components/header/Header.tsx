@@ -6,18 +6,12 @@ import ThemeSwitcher from "@/components/theme-switcher/ThemeSwitcher";
 import { THEME, useTheme } from "@/providers/theme/ThemeProvider";
 import Image from "next/image";
 import Link from "next/link";
-import MobileMenu from "./MobileMenu";
+import type { ReactNode } from "react";
+import { navItems } from "./navItems";
 
-const Header = () => {
+const Header = ({ mobileMenu }: { mobileMenu: ReactNode }) => {
   const { theme } = useTheme();
   const currentLogo = theme === THEME.DARK ? logoDark : logoLight;
-
-  const navItems = [
-    { label: "About", href: "#about" },
-    { label: "Experience", href: "#experience" },
-    { label: "Skills", href: "#skills" },
-    { label: "Contact", href: "#contact" },
-  ];
 
   return (
     <header className="sticky top-0 z-50 backdrop-blur shadow-xl">
@@ -26,7 +20,7 @@ const Header = () => {
           <Image src={currentLogo} alt="Bestin John" width={40} height={40} />
           <span className="sr-only">Bestin John</span>
         </Link>
-        <nav className="hidden md:flex items-center gap-6 text-[13px] font-mono ">
+        <nav className="hidden md:flex items-center gap-6 text-[13px] font-mono">
           {navItems.map((item, i) => (
             <a
               key={item.href}
@@ -39,7 +33,7 @@ const Header = () => {
           ))}
           <ThemeSwitcher />
         </nav>
-        <MobileMenu navItems={navItems} />
+        {mobileMenu}
       </div>
     </header>
   );
